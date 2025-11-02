@@ -2,3 +2,4 @@ __pycache__/
 *.json
 service-account-key.json
 **/service-account-key.json
+node_modules/
