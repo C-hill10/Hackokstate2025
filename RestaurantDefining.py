@@ -19,17 +19,17 @@ class RestaurantManager:
         except json.JSONDecodeError:
             print(f"Error decoding JSON from the configuration file {config_file}.")
             return {}
-        def initialize_restaurants(self):
+    def initialize_restaurants(self):
             for restaurant_id, restaurant_config in self.config.get("restaurants", {}).items():
                 try: 
                     restaurant = ConfiguredRestaurant(restaurant_config)
                     self.restaurants[restaurant_id] = restaurant
                 except Exception as e:
                     print(f"Error initializing restaurant {restaurant_id}: {e}")
-        def get_restaurant(self, restaurant_id):
+    def get_restaurant(self, restaurant_id):
             return self.restaurants.get(restaurant_id)
         
-        def update_all_restaurants(self):
+    def update_all_restaurants(self):
             results = {}
             for restaurant_id, restaurant in self.restaurants.items():
                 try:
@@ -44,10 +44,11 @@ class RestaurantManager:
                     print(f"Error updating restaurant {restaurant_id}: {e}")
                 
             return results
-        def get_all_statuses(self):
+    def get_all_statuses(self):
             statuses = {}
             for restaurant_id, restaurant in self.restaurants.items():
                 try:
+                    hours_status = restaurant.get_hours_status()
                     statuses[restaurant_id] = {
                         'name': restaurant.name,
                         'is_open': restaurant.is_open,
