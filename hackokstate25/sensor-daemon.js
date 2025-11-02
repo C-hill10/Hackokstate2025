@@ -42,7 +42,7 @@ const DEFAULT_CONFIG = {
     },
     firestore: {
         batchSize: 10, // Number of updates per batch
-    rateLimit: {
+        rateLimit: {
             windowMs: 60000, // 1 minute
             maxRequests: 100, // Max requests per window
         }
@@ -57,7 +57,7 @@ const DEFAULT_CONFIG = {
 function initFirebase() {
     try {
         const serviceAccountPath = path.join(__dirname, 'service-account-key.json');
-        
+
         if (!fs.existsSync(serviceAccountPath)) {
             console.error('❌ service-account-key.json not found!');
             console.log('💡 Download it from Firebase Console > Project Settings > Service Accounts');
@@ -84,7 +84,7 @@ function initFirebase() {
 // Load sensor configuration
 function loadConfig() {
     const configPath = path.join(__dirname, 'sensor-config.json');
-    
+
     if (!fs.existsSync(configPath)) {
         console.warn('⚠️  sensor-config.json not found. Using default configuration.');
         console.log('💡 Creating example sensor-config.json...');
@@ -149,7 +149,7 @@ class Logger {
         if (levelNum >= configLevelNum) {
             const timestamp = new Date().toISOString();
             const logMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
-            
+
             if (data) {
                 console.log(logMessage, data);
             } else {
@@ -236,17 +236,17 @@ async function updateCrowdLevel(locationId, crowdLevel, logger) {
             });
 
             logger.info(`Updated ${locationId}: ${currentLevel}% → ${crowdLevel}%`);
-            return { 
-                success: true, 
-                previousLevel: currentLevel, 
+            return {
+                success: true,
+                previousLevel: currentLevel,
                 newLevel: crowdLevel,
                 locationId: locationId
             };
         } else {
             logger.debug(`Skipped ${locationId}: No change (${currentLevel}%)`);
-            return { 
-                success: true, 
-                skipped: true, 
+            return {
+                success: true,
+                skipped: true,
                 level: currentLevel,
                 locationId: locationId
             };
@@ -275,7 +275,7 @@ function startServer() {
     );
 
     // Middleware
-    app.use(express.json({ 
+    app.use(express.json({
         strict: true
     }));
     app.use(express.urlencoded({ extended: true }));
@@ -291,8 +291,8 @@ function startServer() {
 
     // Health check endpoint
     app.get('/health', (req, res) => {
-        res.json({ 
-            status: 'healthy', 
+        res.json({
+            status: 'healthy',
             timestamp: new Date().toISOString(),
             service: 'sensor-daemon'
         });
@@ -379,7 +379,7 @@ function startServer() {
         // Update Firestore
         try {
             const result = await updateCrowdLevel(locationId, crowdLevel, logger);
-            
+
             if (result.success) {
                 if (result.skipped) {
                     return res.status(200).json({
@@ -429,7 +429,7 @@ function startServer() {
                 details: 'Please ensure your JSON is properly formatted with quotes around property names and values'
             });
         }
-        
+
         // Handle other errors
         logger.error('Express error:', err);
         res.status(err.status || 500).json({
@@ -447,7 +447,7 @@ function startServer() {
         logger.info(`Listening on http://${host}:${port}`);
         logger.info(`Health check: http://${host}:${port}/health`);
         logger.info(`API info: http://${host}:${port}/api`);
-        
+
         if (config.security?.requireApiKey) {
             logger.warn(`⚠️  API key authentication is ENABLED`);
         } else {
@@ -458,10 +458,10 @@ function startServer() {
     // Graceful shutdown
     const shutdown = () => {
         console.log('\n\n🛑 Shutting down Sensor HTTP Server...');
-        
+
         server.close(() => {
             console.log('✅ HTTP server closed');
-            
+
             // Clean up Firebase Admin
             if (admin.apps.length) {
                 admin.app().delete().then(() => {

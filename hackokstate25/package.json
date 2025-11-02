@@ -17,10 +17,13 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^9.2.1",
     "vite": "^5.0.8"
   },
   "scripts": {
     "dev": "vite",
+    "dev:all": "concurrently \"npm run dev\" \"npm run sensor-server\" --names \"VITE,SENSOR\" --prefix-colors \"blue,green\"",
+    "start": "npm run dev:all",
     "build": "vite build",
     "preview": "vite preview",
     "sensor-server": "node sensor-daemon.js"
