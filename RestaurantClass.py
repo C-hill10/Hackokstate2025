@@ -1,6 +1,6 @@
 import numpy as np
 
-class PlazaCornerCafe:
+class Restaurant:
 
     def __init__(self, name, max_capacity):
         self.name = name
