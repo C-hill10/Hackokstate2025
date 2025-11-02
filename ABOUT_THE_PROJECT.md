@@ -30,6 +30,10 @@ The "wow moment": Open the admin panel on one screen and the map on another. Mov
 - Firebase Functions for serverless API endpoints (sensor integration)
 - Firebase Hosting for fast, global CDN deployment
 
+**Location Information**
+- Scraped dining options details from OSU dining website
+- Fetched and processed position coordinate details from Google Map and OpenStreetMap
+
 **Algorithms:**
 - Custom scoring algorithm for AI recommendations (considers distance, crowd level, meal context, preferences, and menu variety)
 - Haversine formula for accurate distance calculations
@@ -100,15 +104,14 @@ The entire stack is deployed on Firebase for seamless integration and scalabilit
 
 ## What's next for Pete's Plate & Pace
 
-- [ ] **Web Scraper** - Automatically scrape OSU Dining Services website for official menu updates
-- [ ] **LLM Integration** - Integrate OpenAI/Gemini for more natural language-based recommendations
-- [ ] **User Authentication** - Personal accounts with saved preferences and dining history
-- [ ] **Mobile App** - Native iOS/Android applications for on-the-go access
-- [ ] **Historical Analytics** - Track crowd level patterns over time to predict busy periods
-- [ ] **Push Notifications** - Alert students when favorite locations have low crowds
-- [ ] **Direct API Integration** - Connect directly with OSU Dining Services API
-- [ ] **Multi-Campus Support** - Expand to other universities
-- [ ] **Restaurant Partnerships** - Integrate with off-campus dining options
-- [ ] **Nutritional Information** - Add calorie counts and nutritional data to menu items
+- **LLM Integration** - Integrate OpenAI/Gemini for more natural language-based recommendations
+- **User Authentication** - Personal accounts with saved preferences and dining history
+- **Mobile App** - Native iOS/Android applications for on-the-go access
+- **Historical Analytics** - Track crowd level patterns over time to predict busy periods
+- **Push Notifications** - Alert students when favorite locations have low crowds
+- **Direct API Integration** - Connect directly with OSU Dining Services API
+- **Multi-Campus Support** - Expand to other universities
+- **Restaurant Partnerships** - Integrate with off-campus dining options
+- **Nutritional Information** - Add calorie counts and nutritional data to menu items
 
 **Our Goal**: Make Pete's Plate & Pace the go-to app for every OSU student when deciding where to eat, ultimately saving students thousands of hours each semester.
