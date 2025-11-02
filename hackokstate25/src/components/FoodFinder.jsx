@@ -177,8 +177,14 @@ function FoodFinder({ onFilter, onLocationSelect }) {
             inDetailedMenu = searchInDetailedMenu(loc.detailedMenu)
           }
 
-          // Only return true if found in menu fields (not in name/description)
-          return inOfficialMenu || inLiveMenu || inDetailedMenu
+          // Search in location name
+          const inLocationName = loc.name?.toLowerCase().includes(cravingLower) || false
+
+          // Search in building name
+          const inBuildingName = loc.building?.toLowerCase().includes(cravingLower) || false
+
+          // Return true if found in menu fields, location name, or building name
+          return inOfficialMenu || inLiveMenu || inDetailedMenu || inLocationName || inBuildingName
         })
 
         // Calculate distances and sort by crowd level and distance
@@ -292,7 +298,7 @@ function FoodFinder({ onFilter, onLocationSelect }) {
           </svg>
           <input
             type="text"
-            placeholder="Search for food (e.g., Pizza, Coffee, Burgers)"
+            placeholder="Search for food or locations (e.g., Pizza, Coffee, Express It!)"
             value={craving}
             onChange={(e) => setCraving(e.target.value)}
             onKeyPress={(e) => {
