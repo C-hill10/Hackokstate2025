@@ -1,5 +1,3 @@
-import numpy as np
-
 class Restaurant:
 
     def __init__(self, name, max_capacity):
