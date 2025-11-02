@@ -31,6 +31,8 @@ class Restaurant:
             print("Error: More customers exiting than present.")
             return False
     def get_occupancy_rate(self):
+        if self.max_capacity == 0:
+            return 0
         return (self.current_customers / self.max_capacity) * 100
     def open_restaurant(self):
         self.is_open = True
