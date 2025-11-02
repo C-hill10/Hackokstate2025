@@ -38,7 +38,7 @@
      - Publish directory: `dist`
    - Click "Deploy site"
 
-### Option 3: Firebase Hosting
+### Option 3: Firebase Hosting (With Cloud Functions)
 
 1. **Install Firebase CLI:**
    ```bash
@@ -53,19 +53,43 @@
 3. **Initialize Firebase in your project:**
    ```bash
    firebase init hosting
+   firebase init functions
    ```
    - Select your Firebase project
-   - Public directory: `dist`
+   - Public directory: `hackokstate25/dist`
    - Configure as single-page app: `Yes`
    - Set up automatic builds: `No` (or `Yes` if you want)
 
-4. **Build and Deploy:**
+4. **Install Functions dependencies:**
    ```bash
-   npm run build
-   firebase deploy
+   cd functions
+   npm install
+   cd ..
    ```
 
-5. **Your app will be at:** `https://your-project-id.web.app`
+5. **Set environment variables (optional, for API key authentication):**
+   ```bash
+   firebase functions:secrets:set API_KEY
+   # Enter your secure API key when prompted
+   firebase functions:secrets:set REQUIRE_API_KEY
+   # Enter "false" or "true" when prompted
+   ```
+   Or use the Firebase Console: Functions > Configuration > Environment Variables
+
+6. **Build and Deploy:**
+   ```bash
+   cd hackokstate25
+   npm run build
+   cd ..
+   firebase deploy
+   ```
+   This deploys both hosting and functions together.
+
+7. **Your app will be at:** `https://your-project-id.web.app`
+   - API endpoint: `https://your-project-id.web.app/api/update-crowd-level`
+   - Health check: `https://your-project-id.web.app/health`
+
+**Note:** The sensor daemon API is now deployed as a Cloud Function, accessible via the same domain as your hosting. This means your sensors can send updates directly to your deployed app without needing a separate server.
 
 ## Post-Deployment Checklist
 
