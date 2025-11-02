@@ -11,7 +11,7 @@ function CrowdsourceForm({ locationId, locationName, onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     if (!menuItem.trim()) {
       alert('Please enter a menu item')
       return
@@ -21,7 +21,7 @@ function CrowdsourceForm({ locationId, locationName, onClose }) {
 
     try {
       const locationRef = doc(db, 'dininglocations', locationId)
-      
+
       await updateDoc(locationRef, {
         liveMenu: arrayUnion({
           item: menuItem.trim(),
@@ -33,7 +33,7 @@ function CrowdsourceForm({ locationId, locationName, onClose }) {
       setSuccess(true)
       setMenuItem('')
       setUserName('')
-      
+
       setTimeout(() => {
         setSuccess(false)
         if (onClose) onClose()
@@ -50,7 +50,7 @@ function CrowdsourceForm({ locationId, locationName, onClose }) {
     <div className="crowdsource-form-container">
       <h3>Share What's Available</h3>
       <p className="form-subtitle">Help other students find great food at {locationName}</p>
-      
+
       <form onSubmit={handleSubmit} className="crowdsource-form">
         <div className="form-group">
           <label htmlFor="menuItem">Menu Item:</label>
@@ -82,8 +82,8 @@ function CrowdsourceForm({ locationId, locationName, onClose }) {
             ✓ Thanks! Your update has been shared.
           </div>
         ) : (
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="submit-button"
             disabled={submitting}
           >

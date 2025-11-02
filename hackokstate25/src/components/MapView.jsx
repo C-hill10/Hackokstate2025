@@ -15,20 +15,20 @@ const DEFAULT_ZOOM = 16
 // Component to handle map zoom/pan when filter is active
 function MapController({ filteredLocations }) {
   const map = useMap()
-  
+
   useEffect(() => {
     if (filteredLocations && filteredLocations.length > 0) {
       // Zoom to show all filtered locations
       const bounds = filteredLocations
         .filter(loc => loc.coordinates?.lat && loc.coordinates?.lng)
         .map(loc => [loc.coordinates.lat, loc.coordinates.lng])
-      
+
       if (bounds.length > 0) {
         map.fitBounds(bounds, { padding: [50, 50] })
       }
     }
   }, [filteredLocations, map])
-  
+
   return null
 }
 
@@ -37,11 +37,12 @@ function MapView() {
   const [filteredLocations, setFilteredLocations] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedLocationId, setSelectedLocationId] = useState(null)
 
   useEffect(() => {
     // Reset coordinate map when locations change
     resetCoordinateMap()
-    
+
     // Real-time listener for dining locations
     const unsubscribe = onSnapshot(
       collection(db, 'dininglocations'),
@@ -72,7 +73,7 @@ function MapView() {
   if (loading) {
     return (
       <div className="map-container loading">
-        <div className="loading-spinner">Loading map...</div>
+        <div className="loading-spinner">Loading dining locations...</div>
       </div>
     )
   }
@@ -87,7 +88,7 @@ function MapView() {
             <p><strong>Common issues:</strong></p>
             <ul>
               <li>Check Firestore security rules allow reads</li>
-              <li>Verify collection name is exactly "diningLocations"</li>
+              <li>Verify collection name is exactly "dininglocations"</li>
               <li>Check browser console for more details</li>
             </ul>
           </div>
@@ -96,12 +97,22 @@ function MapView() {
     )
   }
 
-  const displayLocations = filteredLocations || locations
+  // Determine what to display
+  const displayLocations = filteredLocations !== null && filteredLocations.length > 0 ? filteredLocations : locations
+  const hasNoData = locations.length === 0
+  const hasActiveFilter = filteredLocations !== null && filteredLocations.length > 0
+  const hasNoFilterMatches = filteredLocations !== null && Array.isArray(filteredLocations) && filteredLocations.length === 0
+
+  const handleLocationSelect = (locationId) => {
+    setSelectedLocationId(locationId)
+    // Reset after a short delay to allow the popup to open
+    setTimeout(() => setSelectedLocationId(null), 100)
+  }
 
   return (
     <div className="map-container">
-      <FoodFinder onFilter={setFilteredLocations} />
-      {displayLocations.length === 0 ? (
+      <FoodFinder onFilter={setFilteredLocations} onLocationSelect={handleLocationSelect} />
+      {hasNoData ? (
         <div className="map-container loading">
           <div className="error-message">
             <h3>No Locations Found</h3>
@@ -109,10 +120,37 @@ function MapView() {
             <div className="error-details">
               <p><strong>Check:</strong></p>
               <ul>
-                <li>Collection name is "diningLocations"</li>
+                <li>Collection name is "dininglocations"</li>
                 <li>Documents have: name, coordinates (lat/lng), crowdLevel</li>
                 <li>Open browser console (F12) to see data logs</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      ) : hasNoFilterMatches ? (
+        <div className="map-container">
+          <MapContainer
+            center={OSU_CENTER}
+            zoom={DEFAULT_ZOOM}
+            style={{ height: '100%', width: '100%' }}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {locations.map((location) => (
+              <LocationMarker
+                key={location.id}
+                location={location}
+                selected={selectedLocationId === (location.id || location.name)}
+              />
+            ))}
+          </MapContainer>
+          <div className="no-filter-matches">
+            <div className="no-matches-message">
+              <h3>🔍 No Matches Found</h3>
+              <p>No locations found matching your search criteria.</p>
+              <p>Try a different search term or clear the filter to see all locations.</p>
             </div>
           </div>
         </div>
@@ -128,7 +166,11 @@ function MapView() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {displayLocations.map((location) => (
-            <LocationMarker key={location.id} location={location} />
+            <LocationMarker
+              key={location.id}
+              location={location}
+              selected={selectedLocationId === (location.id || location.name)}
+            />
           ))}
         </MapContainer>
       )}

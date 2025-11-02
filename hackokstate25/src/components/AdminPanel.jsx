@@ -81,7 +81,7 @@ function AdminPanel() {
               <p><strong>Common fixes:</strong></p>
               <ul>
                 <li>Check Firestore security rules - should allow reads</li>
-                <li>Collection name must be exactly "diningLocations"</li>
+                <li>Collection name must be exactly "dininglocations"</li>
                 <li>Check browser console (F12) for detailed error messages</li>
               </ul>
             </div>
@@ -102,7 +102,7 @@ function AdminPanel() {
         {locations.length === 0 ? (
           <div className="no-locations">
             <h3>No dining locations found</h3>
-            <p>No documents found in the "diningLocations" collection.</p>
+            <p>No documents found in the "dininglocations" collection.</p>
             <div className="error-details">
               <p><strong>Required fields for each document:</strong></p>
               <ul>
@@ -119,7 +119,7 @@ function AdminPanel() {
             {locations.map((location) => (
               <div key={location.id} className="location-card">
                 <h2>{location.name}</h2>
-                
+
                 <div className="control-group">
                   <label htmlFor={`crowd-${location.id}`}>
                     Crowd Level: <strong>{location.crowdLevel || 0}%</strong>
