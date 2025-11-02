@@ -26,12 +26,13 @@ A comprehensive web application built for Oklahoma State University that provide
 
 Pete's Plate & Pace is a real-time dining dashboard designed specifically for Oklahoma State University students. It helps students make informed decisions about where to eat by providing:
 
-- **Live crowd level data** - See how busy each location is in real-time
+- **Live crowd level data** - See how busy each location is in real-time (updated via admin panel or automated sensors)
 - **Interactive campus map** - Visualize all dining locations on an OSU campus map
 - **AI-powered recommendations** - Get personalized suggestions based on time, location, and preferences
 - **Smart food search** - Find locations serving specific foods or filter by crowd level
 - **Menu information** - View official menus, live crowd-sourced updates, and detailed menu items
 - **Distance calculations** - See how far each location is from your current position
+- **Sensor integration** - RESTful API for Arduino/sensor devices to automatically update crowd levels
 
 ## ✨ Features
 
@@ -68,6 +69,14 @@ Pete's Plate & Pace is a real-time dining dashboard designed specifically for Ok
 - Live updates across all connected clients
 - Easy-to-use interface for dining staff
 
+### 🔌 Sensor Integration
+- **RESTful API** - HTTP endpoints for Arduino/sensor devices
+- **Real-time updates** - Sensor data automatically updates Firestore
+- **Python client library** - Easy integration for sensor devices
+- **Rate limiting** - Built-in protection (100 requests/minute)
+- **Optional API key authentication** - Secure endpoint access
+- **Health check endpoint** - Monitor API status
+
 ### 👥 Crowdsourcing
 - User-submitted menu updates
 - Live menu items with timestamps
@@ -99,7 +108,15 @@ Each location popup includes:
 ### Backend & Database
 - **Firebase Firestore** - Real-time NoSQL database
 - **Firebase Admin SDK** - Server-side operations
-- **Firebase Realtime Listeners** - Instant data synchronization
+- **Firebase Realtime Listeners** - Instant data synchronization (`onSnapshot`)
+- **Firebase Cloud Functions** - Serverless API endpoints (Node.js 20)
+- **Express.js** - RESTful API routing for sensor integration
+
+### Sensor Integration
+- **Arduino** - Motion sensors for crowd detection
+- **Python Client** - `SensorClient.py` for hardware-to-Firebase bridge
+- **RESTful API** - HTTP endpoints for sensor data ingestion
+- **Rate Limiting** - Built-in protection against API abuse
 
 ### Utilities
 - **Haversine Formula** - Accurate distance calculations
@@ -152,8 +169,17 @@ Each location popup includes:
    - Add location documents following the structure in [Documentation/FIRESTORE_SETUP.md](hackokstate25/Documentation/FIRESTORE_SETUP.md)
    - See the documentation for detailed schema information
 
-6. **Run the development server:**
+6. **Set up Firebase Functions (optional, for sensor integration):**
    ```bash
+   cd functions
+   npm install
+   cd ..
+   ```
+   - See [functions/README.md](functions/README.md) for detailed setup
+
+7. **Run the development server:**
+   ```bash
+   cd hackokstate25
    npm run dev
    ```
    - Open http://localhost:5173 in your browser
@@ -164,7 +190,7 @@ For detailed setup instructions, see [Documentation/SETUP_INSTRUCTIONS.md](hacko
 
 ```
 Hackokstate2025/
-├── hackokstate25/
+├── hackokstate25/                  # Main frontend React application
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── MapView.jsx           # Main map component
@@ -185,16 +211,22 @@ Hackokstate2025/
 │   │   ├── main.jsx                 # Entry point
 │   │   └── index.css                # Base styles
 │   ├── Documentation/              # Comprehensive documentation
-│   │   ├── README.md
-│   │   ├── SETUP_INSTRUCTIONS.md
-│   │   ├── FIRESTORE_SETUP.md
-│   │   ├── DEPLOYMENT.md
-│   │   ├── PROJECT_STATUS.md
-│   │   └── ...
+│   ├── dist/                       # Production build output
 │   ├── package.json
 │   ├── vite.config.js
 │   └── README.md
-└── README.md (this file)
+├── functions/                      # Firebase Cloud Functions
+│   ├── index.js                    # Sensor API endpoints
+│   ├── package.json
+│   └── README.md                   # Functions documentation
+├── public/                         # Static files for Firebase Hosting
+│   └── 404.html
+├── sensor/                         # Sensor integration files
+│   └── SensorClient.py             # Python client for Arduino
+├── firebase.json                   # Firebase configuration
+├── ABOUT_THE_PROJECT.md            # Project story and challenges
+├── HACKATHON_TECH_FEEDBACK.md      # Technology feedback
+└── README.md                       # This file
 ```
 
 ## 🎯 Features in Detail
@@ -239,6 +271,28 @@ The application uses a sophisticated coordinate system:
 - **Accurate OSU coordinates** - Custom mapping of building names to precise coordinates
 - **Coordinate offset system** - Prevents marker overlap when multiple locations share coordinates
 - **Fallback handling** - Uses scraped coordinates when accurate coordinates aren't available
+
+### Sensor API
+
+The Firebase Cloud Function provides RESTful endpoints for sensor integration:
+
+- **POST `/api/update-crowd-level`** - Update crowd level for a location
+  ```json
+  {
+    "locationId": "kerr-drummond",
+    "crowdLevel": 75
+  }
+  ```
+- **GET `/health`** - Health check endpoint
+- **GET `/api`** - API information
+
+Features:
+- Rate limiting (100 requests/minute per IP)
+- Optional API key authentication
+- Automatic Firestore updates
+- Error handling and validation
+
+See [functions/README.md](functions/README.md) for detailed API documentation and Python client usage.
 
 ## 🔥 Firebase Setup
 
@@ -317,8 +371,14 @@ npm run preview
 
 1. **Real-time testing**: Open the map view and admin panel side-by-side to see real-time updates
 2. **Browser console**: Check for Firestore connection logs and errors
-3. **Firebase emulator**: Consider using Firebase emulators for local development
+3. **Firebase emulators**: Use Firebase emulators for local development:
+   ```bash
+   firebase emulators:start
+   ```
+   This starts Firestore, Functions, and Hosting emulators locally
 4. **Coordinate accuracy**: Use the coordinate helper tools in the Documentation folder
+5. **Testing Functions locally**: Functions are automatically available when using Firebase emulators
+6. **Sensor testing**: Use the Python `SensorClient.py` to test sensor API endpoints
 
 ### Code Style
 
@@ -343,16 +403,36 @@ npm run preview
 3. Build command: `npm run build`
 4. Publish directory: `dist`
 
-### Option 3: Firebase Hosting
+### Option 3: Firebase Hosting (Recommended for Full Stack)
+
+Firebase Hosting is the recommended option as it deploys both frontend and backend together:
 
 ```bash
+# Install Firebase CLI
 npm install -g firebase-tools
+
+# Login to Firebase
 firebase login
-firebase init hosting
-# Follow prompts
+
+# Initialize (if not already done)
+firebase init
+
+# Build the frontend
+cd hackokstate25
 npm run build
+cd ..
+
+# Deploy everything (hosting + functions)
 firebase deploy
 ```
+
+This will deploy:
+- **Frontend** to Firebase Hosting (from `hackokstate25/dist`)
+- **Cloud Functions** for the sensor API (from `functions/`)
+
+The API endpoints will be available at:
+- `https://your-project-id.web.app/api/update-crowd-level`
+- `https://your-project-id.web.app/health`
 
 For detailed deployment instructions, see [Documentation/DEPLOYMENT.md](hackokstate25/Documentation/DEPLOYMENT.md).
 
@@ -402,13 +482,16 @@ This project was built for HackOkState 2025. Contributions and improvements are 
 
 ### Areas for Future Enhancement
 
+- [x] Firebase Functions API for sensor integration
+- [x] Python client for sensor devices
 - [ ] Web scraper for automatic menu updates
 - [ ] LLM-based AI recommendations (OpenAI/Gemini integration)
 - [ ] User authentication and personalized preferences
-- [ ] Mobile app version
-- [ ] Historical crowd level analytics
+- [ ] Mobile app version (iOS/Android)
+- [ ] Historical crowd level analytics and predictions
 - [ ] Push notifications for crowd level changes
-- [ ] Integration with OSU dining services API
+- [ ] Direct integration with OSU dining services API
+- [ ] Multi-campus support for other universities
 
 ## 📝 License
 
