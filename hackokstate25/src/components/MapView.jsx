@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { Icon, DivIcon } from 'leaflet'
 import { collection, onSnapshot, doc, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase/config'
 import LocationMarker from './LocationMarker'
@@ -12,6 +13,31 @@ import './MapView.css'
 // OSU Campus center coordinates
 const OSU_CENTER = [36.1285, -97.0673]
 const DEFAULT_ZOOM = 16
+
+// Create user location icon (blue pin with dot)
+const createUserLocationIcon = () => {
+  const svgString = '<svg width="32" height="44" viewBox="0 0 32 44" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C10.477 0 6 4.477 6 10c0 7 10 18 10 18s10-11 10-18c0-5.523-4.477-10-10-10z" fill="#4285F4" stroke="white" stroke-width="2"/><circle cx="16" cy="10" r="6" fill="white"/><circle cx="16" cy="10" r="3" fill="#4285F4"/></svg>'
+  // Try URL encoding instead of base64 for better compatibility
+  const encodedSvg = encodeURIComponent(svgString)
+
+  try {
+    return new Icon({
+      iconUrl: `data:image/svg+xml;charset=utf-8,${encodedSvg}`,
+      iconSize: [32, 44],
+      iconAnchor: [16, 44],
+      popupAnchor: [0, -44],
+    })
+  } catch (error) {
+    console.error('Error creating user location icon:', error)
+    // Fallback to a simple DivIcon
+    return new DivIcon({
+      className: 'user-location-marker',
+      html: '<div style="width: 24px; height: 24px; background: #4285F4; border: 3px solid white; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12],
+    })
+  }
+}
 
 // Component to handle map zoom/pan when filter is active
 function MapController({ filteredLocations }) {
@@ -39,6 +65,14 @@ function MapView() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [selectedLocationId, setSelectedLocationId] = useState(null)
+  const [userLocation, setUserLocation] = useState(null)
+
+  // Debug: Log when userLocation changes
+  useEffect(() => {
+    if (userLocation) {
+      console.log('User location state updated:', userLocation)
+    }
+  }, [userLocation])
 
   useEffect(() => {
     // Reset coordinate map when locations change
@@ -69,6 +103,34 @@ function MapView() {
     )
 
     return () => unsubscribe()
+  }, [])
+
+  // Get user location
+  useEffect(() => {
+    if (navigator.geolocation) {
+      console.log('Requesting user location...')
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          console.log('User location obtained:', position.coords.latitude, position.coords.longitude)
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          })
+        },
+        (error) => {
+          console.error('Geolocation error:', error)
+          console.error('Error code:', error.code, 'Error message:', error.message)
+          // Don't set default location - just don't show user marker if geolocation fails
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 60000, // Cache for 1 minute
+        }
+      )
+    } else {
+      console.warn('Geolocation is not supported by this browser')
+    }
   }, [])
 
   if (loading) {
@@ -167,6 +229,18 @@ function MapView() {
                 selected={selectedLocationId === (location.id || location.name)}
               />
             ))}
+            {userLocation && (
+              <Marker
+                position={[userLocation.lat, userLocation.lng]}
+                icon={createUserLocationIcon()}
+              >
+                <Popup>
+                  <div style={{ textAlign: 'center', padding: '4px' }}>
+                    <strong>📍 Your Location</strong>
+                  </div>
+                </Popup>
+              </Marker>
+            )}
           </MapContainer>
           <div className="no-filter-matches">
             <div className="no-matches-message">
@@ -194,6 +268,18 @@ function MapView() {
               selected={selectedLocationId === (location.id || location.name)}
             />
           ))}
+          {userLocation && (
+            <Marker
+              position={[userLocation.lat, userLocation.lng]}
+              icon={createUserLocationIcon()}
+            >
+              <Popup>
+                <div style={{ textAlign: 'center', padding: '4px' }}>
+                  <strong>📍 Your Location</strong>
+                </div>
+              </Popup>
+            </Marker>
+          )}
         </MapContainer>
       )}
       <div className="map-legend">
@@ -210,6 +296,16 @@ function MapView() {
           <span className="legend-color red"></span>
           <span>High (&gt;= 70)</span>
         </div>
+        {userLocation && (
+          <div className="legend-item">
+            <svg width="20" height="28" viewBox="0 0 32 44" style={{ marginRight: '8px' }}>
+              <path d="M16 0C10.477 0 6 4.477 6 10c0 7 10 18 10 18s10-11 10-18c0-5.523-4.477-10-10-10z" fill="#4285F4" stroke="white" strokeWidth="2" />
+              <circle cx="16" cy="10" r="6" fill="white" />
+              <circle cx="16" cy="10" r="3" fill="#4285F4" />
+            </svg>
+            <span>Your Location</span>
+          </div>
+        )}
         {filteredLocations && (
           <div className="filter-indicator">
             Showing {filteredLocations.length} filtered location(s)
