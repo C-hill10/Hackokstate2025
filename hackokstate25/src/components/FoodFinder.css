@@ -358,6 +358,33 @@
   opacity: 1;
 }
 
+.result-item.closed-location {
+  opacity: 0.65;
+  background-color: var(--gray-50);
+}
+
+.result-item.closed-location:hover {
+  background-color: var(--gray-100);
+  opacity: 0.75;
+}
+
+.result-item.closed-location::before {
+  background: #999;
+}
+
+.closed-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  background-color: #f44336;
+  color: white;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .result-hint {
   margin-top: var(--spacing-xs);
   font-size: 0.8rem;

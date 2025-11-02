@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { collection, onSnapshot } from 'firebase/firestore'
 import { db } from '../firebase/config'
 import { getAccurateCoordinates } from '../utils/accurateOSUCoordinates'
+import { checkLocationStatus } from '../utils/checkLocationStatus'
 import AIRecommendation from './AIRecommendation'
 import './FoodFinder.css'
 
@@ -16,6 +17,19 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     Math.sin(dLon / 2) * Math.sin(dLon / 2)
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
   return R * c * 0.621371 // Convert to miles
+}
+
+// Helper function to determine if location is actually open
+// Checks hours if available, otherwise uses status field
+function isLocationOpen(location) {
+  if (location.hours && location.hours.length > 0) {
+    const statusCheck = checkLocationStatus(location.hours)
+    if (statusCheck.isOpen !== null) {
+      return statusCheck.isOpen
+    }
+  }
+  // Fallback to status field
+  return location.status === 'open'
 }
 
 function FoodFinder({ onFilter, onLocationSelect }) {
@@ -75,7 +89,7 @@ function FoodFinder({ onFilter, onLocationSelect }) {
       case 'hurry':
         // In a hurry? Find places with low crowd levels - prioritize distance since time matters
         filtered = locations
-          .filter((loc) => loc.status === 'open' && (loc.crowdLevel || 0) < 50)
+          .filter((loc) => isLocationOpen(loc) && (loc.crowdLevel || 0) < 50)
 
         // Calculate distances and sort by distance first (for speed), then crowd level
         if (userLocation && filtered.length > 0) {
@@ -113,16 +127,13 @@ function FoodFinder({ onFilter, onLocationSelect }) {
         break
 
       case 'craving':
-        // Find places with specific food
+        // Find places with specific food (include both open and closed)
         if (!craving.trim()) {
           alert('Please enter what you\'re craving!')
           return
         }
         const cravingLower = craving.toLowerCase()
         filtered = locations.filter((loc) => {
-          // Only search open locations
-          if (loc.status !== 'open') return false
-
           // Search in official menu items
           const inOfficialMenu =
             loc.officialMenu?.some((item) => {
@@ -187,7 +198,7 @@ function FoodFinder({ onFilter, onLocationSelect }) {
           return inOfficialMenu || inLiveMenu || inDetailedMenu || inLocationName || inBuildingName
         })
 
-        // Calculate distances and sort by crowd level and distance
+        // Calculate distances and determine open/closed status
         if (userLocation && filtered.length > 0) {
           filtered = filtered.map(loc => {
             const accurateCoords = getAccurateCoordinates(loc)
@@ -197,24 +208,49 @@ function FoodFinder({ onFilter, onLocationSelect }) {
             return {
               ...loc,
               distance,
+              isOpen: isLocationOpen(loc), // Add calculated open status
             }
           })
 
-          // Sort by crowd level first (ascending), then by distance (ascending)
+          // Sort: open locations first, then closed
+          // Within open: by crowd level (ascending), then distance (ascending)
+          // Within closed: by crowd level (ascending), then distance (ascending)
           filtered.sort((a, b) => {
+            // First, separate open and closed
+            if (a.isOpen !== b.isOpen) {
+              return a.isOpen ? -1 : 1 // Open locations come first
+            }
+
+            // Within same status, sort by crowd level first
             const crowdA = a.crowdLevel || 100
             const crowdB = b.crowdLevel || 100
             if (crowdA !== crowdB) {
               return crowdA - crowdB
             }
+            // Then by distance
             return (a.distance || Infinity) - (b.distance || Infinity)
           })
 
           // Store results for display
           setSearchResults(filtered)
         } else {
-          // Fallback: sort only by crowd level if no user location
-          filtered.sort((a, b) => (a.crowdLevel || 100) - (b.crowdLevel || 100))
+          // Add calculated open status even without location
+          filtered = filtered.map(loc => ({
+            ...loc,
+            isOpen: isLocationOpen(loc),
+          }))
+
+          // Sort: open locations first, then closed
+          // Within same status, sort by crowd level
+          filtered.sort((a, b) => {
+            // First, separate open and closed
+            if (a.isOpen !== b.isOpen) {
+              return a.isOpen ? -1 : 1 // Open locations come first
+            }
+            // Within same status, sort by crowd level
+            return (a.crowdLevel || 100) - (b.crowdLevel || 100)
+          })
+
           setSearchResults(filtered.map(loc => ({ ...loc, distance: null })))
         }
 
@@ -224,7 +260,7 @@ function FoodFinder({ onFilter, onLocationSelect }) {
       case 'least-crowded':
         // Find least crowded open places - prioritize crowd level, then distance
         filtered = locations
-          .filter((loc) => loc.status === 'open')
+          .filter((loc) => isLocationOpen(loc))
 
         // Calculate distances and sort by crowd level first, then distance
         if (userLocation && filtered.length > 0) {
@@ -383,10 +419,11 @@ function FoodFinder({ onFilter, onLocationSelect }) {
 
         const renderResultItem = (location, index, showWalkTime = false) => {
           const crowdLevel = location.crowdLevel || 0
+          const isOpen = location.isOpen !== undefined ? location.isOpen : isLocationOpen(location)
           return (
             <div
               key={location.id || index}
-              className="result-item"
+              className={`result-item ${!isOpen ? 'closed-location' : ''}`}
               onClick={() => {
                 if (onLocationSelect) {
                   onLocationSelect(location.id || location.name)
@@ -394,13 +431,18 @@ function FoodFinder({ onFilter, onLocationSelect }) {
               }}
             >
               <div className="result-header">
-                <span className="result-name">{location.name}</span>
-                <span
-                  className="result-crowd"
-                  style={{ backgroundColor: getCrowdColor(crowdLevel) }}
-                >
-                  {crowdLevel}% ({getCrowdLabel(crowdLevel)})
+                <span className="result-name">
+                  {location.name}
+                  {!isOpen && <span className="closed-badge">Closed</span>}
                 </span>
+                {isOpen && (
+                  <span
+                    className="result-crowd"
+                    style={{ backgroundColor: getCrowdColor(crowdLevel) }}
+                  >
+                    {crowdLevel}% ({getCrowdLabel(crowdLevel)})
+                  </span>
+                )}
               </div>
               <div className="result-details">
                 {location.building && (
@@ -462,10 +504,11 @@ function FoodFinder({ onFilter, onLocationSelect }) {
                   {searchResults.map((location, index) => {
                     const crowdLevel = location.crowdLevel || 0
                     const isTopPick = index === 0
+                    const isOpen = location.isOpen !== undefined ? location.isOpen : isLocationOpen(location)
                     return (
                       <div
                         key={location.id || index}
-                        className={`result-item ${isTopPick ? 'top-pick' : ''}`}
+                        className={`result-item ${isTopPick ? 'top-pick' : ''} ${!isOpen ? 'closed-location' : ''}`}
                         onClick={() => {
                           if (onLocationSelect) {
                             onLocationSelect(location.id || location.name)
@@ -474,13 +517,18 @@ function FoodFinder({ onFilter, onLocationSelect }) {
                       >
                         {isTopPick && <div className="top-pick-badge">⭐ Best Pick</div>}
                         <div className="result-header">
-                          <span className="result-name">{location.name}</span>
-                          <span
-                            className="result-crowd"
-                            style={{ backgroundColor: getCrowdColor(crowdLevel) }}
-                          >
-                            {crowdLevel}% ({getCrowdLabel(crowdLevel)})
+                          <span className="result-name">
+                            {location.name}
+                            {!isOpen && <span className="closed-badge">Closed</span>}
                           </span>
+                          {isOpen && (
+                            <span
+                              className="result-crowd"
+                              style={{ backgroundColor: getCrowdColor(crowdLevel) }}
+                            >
+                              {crowdLevel}% ({getCrowdLabel(crowdLevel)})
+                            </span>
+                          )}
                         </div>
                         <div className="result-details">
                           {location.building && (

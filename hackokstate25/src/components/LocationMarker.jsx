@@ -4,6 +4,7 @@ import { Icon } from 'leaflet'
 import CrowdsourceForm from './CrowdsourceForm'
 import { getOffsetCoordinates } from '../utils/coordinateOffset'
 import { getAccurateCoordinates } from '../utils/accurateOSUCoordinates'
+import { checkLocationStatus } from '../utils/checkLocationStatus'
 import './LocationMarker.css'
 
 // Create custom icons for different crowd levels
@@ -40,6 +41,16 @@ function LocationMarker({ location, selected }) {
   const [showForm, setShowForm] = useState(false)
   const [activeTab, setActiveTab] = useState('overview')
   const markerRef = useRef(null)
+
+  // Calculate current status based on hours
+  const calculatedStatus = hours && hours.length > 0
+    ? checkLocationStatus(hours)
+    : null
+
+  // Use calculated status if available, otherwise fall back to stored status
+  const displayStatus = calculatedStatus && calculatedStatus.isOpen !== null
+    ? (calculatedStatus.isOpen ? 'open' : 'closed')
+    : (status || 'open')
 
   // Determine color based on crowd level
   const getColor = (level) => {
@@ -93,9 +104,14 @@ function LocationMarker({ location, selected }) {
       <div className="info-grid">
         <div className="info-item">
           <span className="info-label">Status</span>
-          <span className={`status-badge ${status || 'open'}`}>
-            {status === 'closed' ? 'Closed' : 'Open'}
+          <span className={`status-badge ${displayStatus}`}>
+            {displayStatus === 'closed' ? 'Closed' : 'Open'}
           </span>
+          {calculatedStatus && calculatedStatus.reason && calculatedStatus.isOpen !== null && (
+            <span className="status-reason" style={{ fontSize: '0.85em', color: '#666', display: 'block', marginTop: '4px' }}>
+              {calculatedStatus.reason}
+            </span>
+          )}
         </div>
         <div className="info-item">
           <span className="info-label">Crowd Level</span>
