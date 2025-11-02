@@ -12,7 +12,7 @@ class Restaurant:
     
     def customer_enters(self, count = 1):
         if not self.is_open:
-            print("Cafe is closed. Cannot enter.")
+            print("Restaurant is closed. Cannot enter.")
             return
         
         if self.current_customers + count <= self.max_capacity:
@@ -20,7 +20,7 @@ class Restaurant:
             self.entry_count += count
             print(f"{count} customer(s) entered. Current customers: {self.current_customers}")
         else:
-            print(f"Cannot accomodate {count} customers. Cafe at full capacity.")
+            print(f"Cannot accomodate {count} customers. Restaurant at full capacity.")
             return False
     def customer_exits(self, count = 1):
         if self.current_customers - count >= 0:
