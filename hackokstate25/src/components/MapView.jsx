@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
-import { collection, onSnapshot } from 'firebase/firestore'
+import { collection, onSnapshot, doc, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase/config'
 import LocationMarker from './LocationMarker'
 import FoodFinder from './FoodFinder'
 import { resetCoordinateMap } from '../utils/coordinateOffset'
+import { checkLocationStatus } from '../utils/checkLocationStatus'
 import 'leaflet/dist/leaflet.css'
 import './MapView.css'
 
@@ -103,8 +104,29 @@ function MapView() {
   const hasActiveFilter = filteredLocations !== null && filteredLocations.length > 0
   const hasNoFilterMatches = filteredLocations !== null && Array.isArray(filteredLocations) && filteredLocations.length === 0
 
-  const handleLocationSelect = (locationId) => {
+  const handleLocationSelect = async (locationId) => {
     setSelectedLocationId(locationId)
+
+    // Find the location and update its status based on hours
+    const location = locations.find(loc => (loc.id || loc.name) === locationId)
+    if (location && location.hours) {
+      try {
+        const statusCheck = checkLocationStatus(location.hours)
+        const newStatus = statusCheck.isOpen ? 'open' : 'closed'
+
+        // Only update if status changed
+        if (location.status !== newStatus && statusCheck.isOpen !== null) {
+          const locationRef = doc(db, 'dininglocations', location.id)
+          await updateDoc(locationRef, {
+            status: newStatus,
+          })
+          console.log(`Updated ${location.name} status to ${newStatus} based on hours`)
+        }
+      } catch (error) {
+        console.error('Error updating location status:', error)
+      }
+    }
+
     // Reset after a short delay to allow the popup to open
     setTimeout(() => setSelectedLocationId(null), 100)
   }

@@ -19,7 +19,7 @@ def main():
     )
     
     print(f"🔌 Sensor initialized for location: {sensor.location_id}")
-    print(f"📡 Endpoint: {sensor.base_url}/updateCrowdLevel")
+    print(f"📡 Endpoint: {sensor.base_url}/api/update-crowd-level")
     
     # Simulate sensor readings
     crowd_levels = [35, 42, 38, 45, 52, 48]
