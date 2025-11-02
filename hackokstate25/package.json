@@ -4,6 +4,7 @@
   "description": "Pete's Plate & Pace - Real-time OSU dining dashboard",
   "private": true,
   "dependencies": {
+    "express": "^4.18.2",
     "firebase": "^10.14.1",
     "firebase-admin": "^13.5.0",
     "leaflet": "^1.9.4",
@@ -21,6 +22,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sensor-server": "node sensor-daemon.js"
   }
 }

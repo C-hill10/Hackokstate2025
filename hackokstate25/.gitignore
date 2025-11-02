@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Firebase service account key (NEVER commit this!)
+service-account-key.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sensor data (optional - uncomment if you don't want to track sensor data files)
+# sensor-data/
+
