@@ -84,7 +84,7 @@ class SensorClient:
             raise ValueError(f"crowd_level must be between 0 and 100, got {crowd_level}")
         
         # Prepare request
-        url = f"{self.base_url}/updateCrowdLevel"
+        url = f"{self.base_url}/api/update-crowd-level"
         
         payload = {
             "locationId": self.location_id,
