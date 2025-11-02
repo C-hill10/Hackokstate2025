@@ -3,6 +3,7 @@
 void setup() {
   pinMode(SENSOR_PIN, INPUT);
   Serial.begin(9600);
+  pinmode(LED_BUILTIN,OUTPUT);
 }
 
 int cmd;
@@ -21,9 +22,11 @@ void loop() {
     if (LOW == last_state) {
       Serial.write('H'); /* LOW to HIGH */
       last_state = HIGH;
+      digitalWrite(LED_BUILTIN, HIGH);
     } else {
       Serial.write('L'); /* HIGH to LOW */
       last_state = LOW;
+      digitalWrite(LED_BUILTIN_LOW);
     }
   }
 }
