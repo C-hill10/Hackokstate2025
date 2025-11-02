@@ -3,7 +3,7 @@
 void setup() {
   pinMode(SENSOR_PIN, INPUT);
   Serial.begin(9600);
-  pinmode(LED_BUILTIN,OUTPUT);
+  pinMode(LED_BUILTIN,OUTPUT);
 }
 
 int cmd;
@@ -17,16 +17,17 @@ void loop() {
       Serial.write((cmd + 1 - '0') % 10 + '0');
     }
   }
-
+  int sound=analogRead(A0);
+  Serial.writeln(sound);
   if (last_state != digitalRead(SENSOR_PIN)) {
     if (LOW == last_state) {
-      Serial.write('H'); /* LOW to HIGH */
+      Serial.writeln('H'); /* LOW to HIGH */
       last_state = HIGH;
       digitalWrite(LED_BUILTIN, HIGH);
     } else {
-      Serial.write('L'); /* HIGH to LOW */
+      Serial.writeln('L'); /* HIGH to LOW */
       last_state = LOW;
-      digitalWrite(LED_BUILTIN_LOW);
+      digitalWrite(LED_BUILTIN,LOW);
     }
   }
 }
