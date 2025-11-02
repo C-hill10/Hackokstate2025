@@ -2,7 +2,7 @@ import numpy as np
 
 class PlazaCornerCafe:
 
-    def _init_(self, name, max_capacity):
+    def __init__(self, name, max_capacity):
         self.name = name
         self.max_capacity = max_capacity
         self.current_customers = 0
