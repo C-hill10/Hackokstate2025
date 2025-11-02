@@ -4,3 +4,9 @@ service-account-key.json
 **/service-account-key.json
 node_modules/
 config.js
+sensor-config.json
+**/sensor-config.json
+.env
+.env.local
+.env.*.local
+*.log
