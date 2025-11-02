@@ -1,0 +1,242 @@
+.location-popup {
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.location-popup h3 {
+  margin: 0 0 0.75rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.popup-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.status-badge.open {
+  background-color: #4caf50;
+  color: white;
+}
+
+.status-badge.closed {
+  background-color: #999;
+  color: white;
+}
+
+.crowd-level {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.crowd-level strong {
+  color: #333;
+}
+
+.menu-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.menu-section h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.menu-list,
+.live-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  padding: 0.25rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.live-menu-list li {
+  padding: 0.5rem 0;
+  color: #333;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-tag {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.share-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.share-button:hover {
+  background-color: #1976d2;
+}
+
+.building-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.grubhub-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background-color: #28a745;
+  color: white;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.description-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.description-section p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.hours-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.hours-section h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.hours-list li {
+  padding: 0.25rem 0;
+  color: #555;
+}
+
+.toggle-menu-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.toggle-menu-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.detailed-menu-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.detailed-menu-section h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.detailed-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.menu-category {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.menu-category strong {
+  color: #333;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.menu-category ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.menu-category li {
+  padding: 0.15rem 0;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.menu-category em {
+  font-style: normal;
+  font-weight: 600;
+  color: #444;
+}
+
+.links-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+.map-link-btn {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background-color: #2196F3;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.map-link-btn:hover {
+  background-color: #1976d2;
+}

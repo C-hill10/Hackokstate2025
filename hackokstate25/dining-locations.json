@@ -1,0 +1,1850 @@
+[
+  {
+    "name": "Express It!",
+    "building": "Adams Market",
+    "coordinates": {
+      "lat": 36.1278359,
+      "lng": -97.0732384
+    },
+    "status": "open",
+    "crowdLevel": 26,
+    "officialMenu": [
+      "&nbsp;",
+      "Grab-and-Go",
+      "Snacks",
+      "Grocery Items",
+      "Campus Necessities"
+    ],
+    "liveMenu": [],
+    "description": "Located in Adams Market, Express It! offers grocery snacks, grab-and-go items and\n                        campus-living necessities.",
+    "url": "/locations/express-it.html",
+    "cuisine": [
+      "&nbsp;"
+    ],
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552768",
+    "hours": [
+      {
+        "day": "Daily",
+        "hours": "10:00 a.m. to 11 p.m."
+      }
+    ]
+  },
+  {
+    "name": "Fast Break",
+    "building": "Bennett Hall",
+    "coordinates": {
+      "lat": 36.1273244,
+      "lng": -97.0638861
+    },
+    "status": "open",
+    "crowdLevel": 35,
+    "officialMenu": [
+      "Ice Cream",
+      "Milkshakes",
+      "Grab-and-Go"
+    ],
+    "liveMenu": [],
+    "description": "Located in Bennett Hall, Fast Break is a convenience store with grab-and-go items,\n                        ice cream and milk shakes.",
+    "url": "/locations/fast-break.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552770",
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "8 a.m. to 11 p.m."
+      },
+      {
+        "day": "Friday",
+        "hours": "8 a.m. to 7 p.m."
+      },
+      {
+        "day": "Saturday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Sunday",
+        "hours": "5 p.m. to 11 p.m."
+      }
+    ]
+  },
+  {
+    "name": "Slam Dunk",
+    "building": "Bennett Hall",
+    "coordinates": {
+      "lat": 36.1273244,
+      "lng": -97.0638861
+    },
+    "status": "open",
+    "crowdLevel": 7,
+    "officialMenu": [
+      "Salads",
+      "Sandwiches",
+      "Coffee",
+      "Starbucks Coffee",
+      "Breakfast",
+      "À la carte breakfast",
+      "Lunch and dinner favorites",
+      "Salads and soups",
+      "Value menu",
+      "Coffee and more",
+      "Weekly rotating dinner menu"
+    ],
+    "liveMenu": [],
+    "description": "Located in Bennett Hall, Slam Dunk serves breakfast items, sandwiches, salads and\n                        Starbucks coffee.",
+    "url": "/locations/slam-dunk.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552750",
+    "detailedMenu": {
+      "À La Carte Breakfast": {
+        "Items": [
+          "Value Meal scrambled eggs, pork or chicken sausage, bacon, tater tots and a biscuit",
+          "Walking Breakfast scrambled eggs, sausage, tater tots, cheddar cheese, jack cheese and gravy",
+          "Choose Orange Breakfast Sandwich chicken sausage, egg white and swiss cheese on a whole wheat english muffin",
+          "Biscuits with Gravy",
+          "Scrambled Eggs",
+          "Bacon, Sausage",
+          "Chicken Sausage",
+          "Tater Tots",
+          "Biscuit",
+          "Bagel",
+          "Muffin",
+          "Scone",
+          "Egg & Cheese Biscuit",
+          "Sausage, Egg & Cheese Biscuit",
+          "Bacon, Egg & Cheese Biscuit",
+          "Egg & Cheese Burrito",
+          "Sausage, Egg & Cheese Burrito",
+          "Bacon, Egg & Cheese Burrito"
+        ]
+      },
+      "Lunch and Dinner Favorites": {
+        "Items": [
+          "Cowboy Club ham, turkey, bacon, lettuce, tomato, Swiss and cheddar cheese and pesto mayo on sun-dried\n                           tomato focaccia",
+          "Italian Sub pepperoni, salami, ham, lettuce, red onions, provolone and balsamic vinaigrette on\n                           a toasted hoagie"
+        ]
+      },
+      "Salads and Soups": {
+        "Items": [
+          "Build-Your-Own Salad"
+        ]
+      },
+      "Value Menu": {
+        "Items": [
+          "Grilled Three-Cheese Sandwich",
+          "Macaroni and Cheese Bowl",
+          "Chicken Tenders with steak fries"
+        ]
+      },
+      "Coffee and More": {
+        "Items": [
+          "Coffee",
+          "Cafe Americano",
+          "Latte",
+          "Cappuccino",
+          "Mocha",
+          "White Chocolate Mocha",
+          "Caramel Macchiato",
+          "Chai Tea Latte",
+          "Hot Chocolate",
+          "Espresso",
+          "Bottled Water",
+          "Juice",
+          "Milk",
+          "Hot Tea",
+          "Soda",
+          "Powerade",
+          "Strawberry Banana Smoothie"
+        ]
+      },
+      "Weekly Rotating Dinner Menu": {
+        "Monday&nbsp;": [
+          "Rice Bowl with chicken, rich and grilled vegetables",
+          "Falafel Bowl with falafel, rich and grilled vegetables",
+          "Cheesecake"
+        ],
+        "Tuesday": [
+          "Orange Ginger Chicken with vegetable fried rice and naan",
+          "Orange Ginger Cauliflower with vegetable fried rice and naan",
+          "Iced chocolate brownie"
+        ],
+        "Wednesday": [
+          "Chicken Rustler Taco with lettuce, tomato, and cheese. Served with black beans and\n                                 jalapeno cornbread",
+          "Jackfruit Tacos with lettuce, tomato and cheese. Served with black beans and jalapeno\n                                 cornbread",
+          "Cheesecake"
+        ],
+        "Thursday": [
+          "Rotisserie Chicken, with BBQ Carrots, baked potato, wheat dinner roll",
+          "Vegetarian loaded potato, with BBQ carrots, wheat dinner roll",
+          "Iced chocolate brownie"
+        ],
+        "Served Nightly": [
+          "Chicken Alfredo Pasta Bake",
+          "Three Cheese Marinara Pasta Bake",
+          "Breadsticks"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "7:30 a.m. to 7 p.m."
+      },
+      {
+        "day": "Friday",
+        "hours": "7:30 a.m. to 3 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "1890 Market",
+    "building": "Central Market Place",
+    "coordinates": {
+      "lat": 36.1239815,
+      "lng": -97.0737581
+    },
+    "status": "open",
+    "crowdLevel": 20,
+    "officialMenu": [
+      "Grab-and-Go",
+      "Snacks",
+      "Campus Necessities"
+    ],
+    "liveMenu": [],
+    "description": "Located in the new Central Market Place, 1890 Market is OSU's largest on-campus convenience\n                        store. 1890 Market features groceries, grab-and-go items, snacks and necessities.",
+    "url": "/locations/1890-market.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552772",
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "7 a.m. to 11 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "10 a.m. to 11 p.m."
+      }
+    ]
+  },
+  {
+    "name": "BYTE",
+    "building": "Central Market Place",
+    "coordinates": {
+      "lat": 36.1239815,
+      "lng": -97.0737581
+    },
+    "status": "open",
+    "crowdLevel": 39,
+    "officialMenu": [
+      "Various options"
+    ],
+    "liveMenu": [],
+    "description": "Located in Central Market Place, Byte is a locker-style concept that offers a variety\n                        of menu offerings.",
+    "url": "/locations/byte.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552753",
+    "hours": [
+      {
+        "day": "Daily",
+        "hours": "11 a.m. to 10 p.m."
+      }
+    ]
+  },
+  {
+    "name": "Caribou Coffee",
+    "building": "Central Market Place",
+    "coordinates": {
+      "lat": 36.1239815,
+      "lng": -97.0737581
+    },
+    "status": "open",
+    "crowdLevel": 87,
+    "officialMenu": [
+      "Coffee",
+      "Signature",
+      "Classics",
+      "Fruit &amp; yogurt smoothies",
+      "Caribou coolers",
+      "Coffeeless coolers",
+      "Tea",
+      "Oatmeal",
+      "Snack &amp; bakery items"
+    ],
+    "liveMenu": [],
+    "description": "Located in Central Market Place, Caribou Coffee is a coffee shop with a commitment\n                        to sustainability.",
+    "url": "/locations/caribou-coffee-cmp.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552748",
+    "detailedMenu": {
+      "Coffee": {
+        "Items": [
+          "Daily Coffee",
+          "Cold Press",
+          "Crafted Press hot, iced or blended"
+        ]
+      },
+      "Signature": {
+        "Items": [
+          "Turtle Mocha",
+          "Campfire Mocha",
+          "Vanilla White Mocha",
+          "Mint Condition Mocha",
+          "Caramel High Rise"
+        ]
+      },
+      "Classics": {
+        "Items": [
+          "Mocha",
+          "Latte",
+          "Northern Lite Latte",
+          "Macchiato",
+          "Cappuccino",
+          "Hot Chocolate"
+        ]
+      },
+      "Fruit &amp; Yogurt Smoothies": {
+        "Items": [
+          "Strawberry Banana"
+        ]
+      },
+      "Caribou Coolers": {
+        "Items": [
+          "Real Caramel",
+          "Real Vanilla",
+          "Real Chocolate"
+        ]
+      },
+      "Coffeeless Coolers": {
+        "Items": [
+          "Frozen Hot Chocolate",
+          "Cookies & Cream"
+        ]
+      },
+      "Tea": {
+        "Items": [
+          "Chai Tea Latte hot or iced",
+          "Green Tea Lemonade still or sparkling",
+          "Peach Black still or sparkling",
+          "Hot Tea",
+          "Iced Tea mango black, tropical green, classic black"
+        ]
+      },
+      "Oatmeal": {
+        "Items": [
+          "Six-Grain Blend"
+        ]
+      },
+      "Snack &amp; Bakery Items": {
+        "Items": [
+          "Muffins",
+          "Scones",
+          "Bagels"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "7:30 a.m. to 6 p.m."
+      },
+      {
+        "day": "Friday",
+        "hours": "7:30 a.m. to 3 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "The 405 Deli",
+    "building": "Central Market Place",
+    "coordinates": {
+      "lat": 36.1239815,
+      "lng": -97.0737581
+    },
+    "status": "open",
+    "crowdLevel": 75,
+    "officialMenu": [
+      "Salads",
+      "Sandwiches",
+      "Gourmet",
+      "Bread options"
+    ],
+    "liveMenu": [],
+    "description": "&nbsp;",
+    "url": "/locations/the-405-deli.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552765",
+    "detailedMenu": {
+      "Sandwiches": {
+        "Items": [
+          "Hall Of Fame smoked turkey, bacon, pepper jack cheese, lettuce, tomato, red onion, jalapeño aioli",
+          "Washington smoked turkey, cheddar, bacon, lettuce, tomato, avocado, dijon mustard, red onion",
+          "Hester ham, cheddar, crispy onion, lettuce, tomato, honey mustard",
+          "Western pulled pork, cheddar, BBQ sauce, pickles, red onion",
+          "Perkins Roast beef, swiss cheese, sauerkraut, red onion, horseradish sauce",
+          "Country Club roast beef, chicken, ham, turkey, bacon, cheddar cheese, swiss cheese, lettuce, tomato,\n                           mayo, Dijon mustard",
+          "Main roasted chicken, mozzarella, spinach, tomato, basil vinaigrette",
+          "University roasted chicken, buffalo ranch, melted mozzarella, tomato, lettuce",
+          "Monroe Hoagie bun, roast beef, swiss cheese, mushrooms, crispy onions, beef au jus",
+          "Airport pulled pork, sliced ham, swiss cheese, dill pickle, mustardaise",
+          "Lakeview ham, genoa salami, pepperoni, provolone, mozzarella, lettuce, tomato, red onion,\n                           pepperoncini, red wine vinegar, creamy Italian dressing",
+          "Farm egg, avocado salad on wheat berry bread",
+          "Jardot basil vinaigrette, spinach, tomato, mozzarella on wheat berry bread",
+          "Husband inside out grilled cheese with ham, swiss cheese, dill pickle, honey mustard on white\n                           bread",
+          "Knoblock inside out grilled cheese with provolone, cheddar cheese, swiss cheese, tomato on\n                           white bread"
+        ]
+      },
+      "Salads": {
+        "Items": [
+          "The Strip chopped romaine lettuce, grape tomato, cucumber, ham, turkey, cheddar, bacon",
+          "Downtown chopped romaine lettuce, spinach, grape tomato, pepperoncini, ham, salami, pepperoni,\n                           mozzarella",
+          "Botanical Garden chopped romaine, grape tomato, cucumber, red onion, shredded carrot"
+        ]
+      },
+      "Bread Options": {
+        "Items": [
+          "Bagel Whole grain, everything, asiago, jalapeño cheddar",
+          "Breads Texas toast, wheat hoagie, white hoagie, marble rye, jalapeño cheddar"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "7:30 a.m. to 10 p.m."
+      },
+      {
+        "day": "Saturday & Sunday",
+        "hours": "10:30 a.m. to 10 p.m."
+      }
+    ]
+  },
+  {
+    "name": "B & B, Co.",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.1273416,
+      "lng": -97.074234
+    },
+    "status": "open",
+    "crowdLevel": 18,
+    "officialMenu": [
+      "Burgers",
+      "Coffee",
+      "Starbucks Coffee",
+      "Breakfast",
+      "Coffee and espresso",
+      "All-day breakfast",
+      "Lunch and dinner",
+      "Beverages"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, B &amp; B, Co. — short for Breakfast and Burgers — offers all-day\n                        breakfast, Starbucks coffee, burgers and more.",
+    "url": "/locations/bb-co.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552740",
+    "detailedMenu": {
+      "Coffee and Espresso": {
+        "Items": [
+          "Freshly Brewed Coffee",
+          "Caffè Americano",
+          "Caffè Latte",
+          "Caramel Macchiato",
+          "Caffè Mocha",
+          "White Chocolate Mocha",
+          "Chai Tea Latte",
+          "Hot Tea",
+          "Frappuccino white chocolate mocha, vanilla bean or caramel",
+          "Refreshers strawberry acai or mango dragonfruit",
+          "Teavana Iced Tea black, white, green, passion",
+          "Teavana Iced Tea Lemonade black, white, green, passion",
+          "Hot Chocolate traditional or white chocolate",
+          "Espresso"
+        ]
+      },
+      "All-Day Breakfast": {
+        "Items": [
+          "The Classic scrambled eggs, choice of bacon or sausage and morning potatoes",
+          "Breakfast Quesadilla scrambled eggs, cheddar jack cheese, sour cream, smokey ranchero sauce and salsa\n                           verde with choice of sausage, bacon, ham, chorizo or morning potatoes",
+          "Meat & Cheese Omelet cheddar jack cheese, morning potatoes and choice of sausage, bacon, ham, chorizo,\n                           spinach or extra cheese",
+          "Healthy Hash egg whites, peppers and onions, spinach and mushrooms served with whole-wheat toast,\n                           fresh fruit and morning potatoes",
+          "Golden Brown Waffle"
+        ]
+      },
+      "Lunch and Dinner": {
+        "Items": [
+          "B & B Burger applewood-smoked bacon, lettuce, tomato, pickle, onion, B & B Sauce and choice of\n                           American, cheddar or Swiss cheese",
+          "Hamburger lettuce, tomato, pickle, onion, mayonnaise and mustard",
+          "3-Alarm Burger ghost pepper cheese, sriracha B & B Sauce, sliced jalapeños, lettuce and tomato",
+          "The Yolk Burger applewood-smoked bacon, over-hard egg, lettuce, tomato and B & B Sauce served on\n                           Texas toast",
+          "Smoke Stack Burger grilled onions, lettuce, tomato and Head Country BBQ Sauce, with your choice of smoked\n                           gouda or cheddar cheese",
+          "Black Bean Burger (vegetarian) lettuce, tomato and mayonnaise",
+          "Grilled Chicken Sandwich lettuce, tomato, pickles and B & B Sauce",
+          "Tots",
+          "Cheese Tots"
+        ]
+      },
+      "Beverages": {
+        "Items": [
+          "Bottled Water",
+          "100% Orange Juice",
+          "Fountain Drinks"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "7 a.m. to 9 p.m."
+      },
+      {
+        "day": "Saturday & Sunday",
+        "hours": "10 a.m. to 9 p.m."
+      }
+    ]
+  },
+  {
+    "name": "Carvery",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.127413,
+      "lng": -97.0765477
+    },
+    "status": "open",
+    "crowdLevel": 19,
+    "officialMenu": [
+      "Salads",
+      "Gourmet",
+      "Hand-Carved Meats",
+      "Gourmet Sides",
+      "Week 1",
+      "Week 2",
+      "Week 3",
+      "Week 4",
+      "Extras"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, Carvery features hand-carved meats, gourmet sides and salads.",
+    "url": "/locations/carvery.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552780",
+    "detailedMenu": {
+      "Week 1": {
+        "Items": [
+          "Weekly Carve: Smoked Brisket",
+          "Side: Baked Potato or Smokey Mac and Cheese",
+          "Vegetable: BBQ Carrots",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll",
+          "Weekly Carve: Rotisserie Chicken",
+          "Side: Baked Potato or Smokey Mac and Cheese",
+          "Vegetable: BBQ Carrots",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll"
+        ]
+      },
+      "Week 2": {
+        "Items": [
+          "Weekly Carve: Pork Carnitas",
+          "Side: Baked Potato or Smoked Pepper Jack Scalloped Potatoes",
+          "Vegetable: Street Corn",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll",
+          "Weekly Carve: Rotisserie Chicken",
+          "Side: Baked Potato or Smoked Pepper Jack Scalloped Potatoes",
+          "Vegetable: Street Corn",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll"
+        ]
+      },
+      "Week 3": {
+        "Items": [
+          "Weekly Carve: Beef Steamship",
+          "Side: Baked Potato or Mashed Potatoes",
+          "Vegetable: Key Biscayne Vegetables",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll",
+          "Weekly Carve: Rotisserie Chicken",
+          "Side: Baked Potato or Mashed Potatoes",
+          "Vegetable: Key Biscayne Vegetables",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll"
+        ]
+      },
+      "Week 4": {
+        "Items": [
+          "Weekly Carve: Smoked Ham",
+          "Side: Baked Potato or Delmonico Potatoes",
+          "Vegetable: Green Beans with Mushroom and Onion",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll",
+          "Weekly Carve: Rotisserie Chicken",
+          "Side: Baked Potato or Delmonico Potatoes",
+          "Vegetable: Green Beans with Mushroom and Onion",
+          "Whole-Wheat Roll",
+          "Vegetarian Plate: Simple Salad, Half of a Baked Potato, Daily Vegetable, whole wheat roll"
+        ]
+      },
+      "Extras": {
+        "Items": [
+          "Fountain Drink",
+          "Bottled Water"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "5 p.m. to 8:30 p.m."
+      },
+      {
+        "day": "Friday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Dash",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.127413,
+      "lng": -97.0765477
+    },
+    "status": "open",
+    "crowdLevel": 90,
+    "officialMenu": [
+      "Smoothies",
+      "Cookies",
+      "Fruit smoothies"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, Dash features fresh-made smoothies and warm cookies.",
+    "url": "/locations/dash.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552776",
+    "detailedMenu": {
+      "Fruit Smoothies": {
+        "Items": [
+          "Classic Strawberry",
+          "Island Sunset strawberry, mango and piña colada",
+          "Berry Good wild berry",
+          "Fuzzy Mango mango and peach",
+          "Hawaiian Lava piña colada and strawberry"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Daily",
+        "hours": "11  a.m. to 10 p.m."
+      }
+    ]
+  },
+  {
+    "name": "The Natural",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.127413,
+      "lng": -97.0765477
+    },
+    "status": "open",
+    "crowdLevel": 53,
+    "officialMenu": [
+      "Vegan Options",
+      "Gluten-Friendly",
+      "Allergen-Friendly",
+      "Loaded grain bowls",
+      "Lentil pasta bakes",
+      "Lettuce wraps",
+      "Salads &amp; sammies",
+      "Sides"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, The Natural serves gluten-friendly, vegan and allergen-friendly\n                        foods.",
+    "url": "/locations/the-natural.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552739",
+    "detailedMenu": {
+      "Loaded Grain Bowls": {
+        "Items": [
+          "Buddha Buddha chickpea, carrot, mushroom, cucumber, bell pepper, jalapeno, and Sriracha mayo",
+          "Southwest Express black bean, corn, pico de gallo, bell pepper, avocado, cilantro lime sauce, Just*\n                           Ranch dressing",
+          "Buffalo Ranch black bean, carrot, green onion, tomato, bell pepper, avocado, buffalo ranch dressing",
+          "Fall Harvest black bean, harvest veggies, dried canberries, apple cider coleslaw, apple cide vinaigrette"
+        ]
+      },
+      "Lentil Pasta Bakes": {
+        "Items": [
+          "Country BBQ BBQ sauce, Daiya* cheddar cheese, corn, carrot, jalapeno",
+          "\"Cheesy\" Marinara marinara sauce, Daiya* mozzarella cheese, tomato, basil",
+          "Spinach & Sweet Potato sweet potato marinara sauce, spinach, basil, balsamic glaze"
+        ]
+      },
+      "Lettuce Wraps": {
+        "Budda Buddha": [
+          "Buffalo Ranch black bean, carrot, tomato, green onion, buffalo ranch dressing"
+        ]
+      },
+      "Salads &amp; Sammies": {
+        "Items": [
+          "Green Goddess Chicken Salad Sandwich house made green goddess chicken salad served cold between gluten free sandwich bread",
+          "BBQ Pulled Pork Sandwich Smoked pork with Daiya* cheddar cheese, BBQ sauce, and jalapeno served hot on a gluten\n                           free bun",
+          "Sunbutter & Jelly Sandwich sunbutter and grape jelly served cold between gluten free sandwich bread",
+          "Sunbutter Banana & Honey Sandwich sunbutter, banana, and honey served cold between gluten free sandwich bread",
+          "Apple Cider Pulled Pork Sandwich smoked pork topped with apple cider coleslaw and Just* mayo served hot on gluten free\n                           bun",
+          "Green Goddess CHickpea Salad spinach base topped with avocado, cucumber, green onion, chickpea, and parsely, served\n                           with green goddess dressing",
+          "Chicken & Avocado salad with Just* Ranch romaine base topped with fire braised chicken, avocado, Daiya* cheddar cheese, tomatoes\n                           served with Just* Ranch dressing"
+        ]
+      },
+      "Sides": {
+        "Items": [
+          "House Salad",
+          "Lays Potatoe Chips",
+          "Green Goddess Chickpea Chicken Salad"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Saturday",
+        "hours": "11 a.m. to 8 p.m."
+      },
+      {
+        "day": "Sunday",
+        "hours": "5 p.m. to 8 p.m."
+      }
+    ]
+  },
+  {
+    "name": "Noodle U",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.127413,
+      "lng": -97.0765477
+    },
+    "status": "open",
+    "crowdLevel": 26,
+    "officialMenu": [
+      "Wok extras"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, Noodle U offers custom noodle creations with meats and fresh\n                        vegetables.",
+    "url": "/locations/noodle-u.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552782",
+    "detailedMenu": {
+      "Wok Extras": {
+        "Items": [
+          "Lo Mein",
+          "Orange Chicken",
+          "Pot Stickers (3)",
+          "Poached Egg",
+          "Marinated Beef",
+          "Teriyaki Chicken",
+          "Tofu"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "4 p.m. to 8 p.m."
+      },
+      {
+        "day": "Friday-Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Road Trip Pizza & Mac",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.127413,
+      "lng": -97.0765477
+    },
+    "status": "open",
+    "crowdLevel": 29,
+    "officialMenu": [
+      "Pizza",
+      "Wings",
+      "Boneless Wings",
+      "Mac and Cheese",
+      "Build-your-own pizza",
+      "Build-your-own mac and cheese",
+      "Boneless wings"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, Road Trip offers made-to-order pizzas, mac and cheese and\n                        boneless wings.",
+    "url": "/locations/road-trip.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552762",
+    "detailedMenu": {
+      "Build-Your-Own Pizza": {
+        "Items": [
+          "Crust: traditional or cauliflower",
+          "Sauce: marinara, alfredo or diablo",
+          "Choose Four Toppings"
+        ]
+      },
+      "Build-Your-Own Mac and Cheese": {
+        "Items": [
+          "Choose Three Toppings"
+        ]
+      },
+      "Boneless Wings": {
+        "Items": [
+          "Honey BBQ",
+          "Buffalo",
+          "Garlic Parmesan"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Daily",
+        "hours": "11 a.m. to 10 p.m."
+      }
+    ]
+  },
+  {
+    "name": "Zest",
+    "building": "North Dining",
+    "coordinates": {
+      "lat": 36.127413,
+      "lng": -97.0765477
+    },
+    "status": "open",
+    "crowdLevel": 56,
+    "officialMenu": [
+      "Mediterranean",
+      "Grilled gyros",
+      "Pressed piadinas",
+      "Rice bowls",
+      "Salads",
+      "Sauces and spreads"
+    ],
+    "liveMenu": [],
+    "description": "Located in North Dining, Zest features a variety of Mediterranean classics.",
+    "url": "/locations/zest.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552766",
+    "detailedMenu": {
+      "Grilled Gyros": {
+        "Items": [
+          "Zest Steak",
+          "Red Charmoula Chicken",
+          "Grilled Vegetable"
+        ]
+      },
+      "Pressed Piadinas": {
+        "Items": [
+          "Zest Steak",
+          "Red Charmoula Chicken",
+          "Grilled Vegetable"
+        ]
+      },
+      "Rice Bowls": {
+        "Items": [
+          "Zest Steak",
+          "Red Charmoula Chicken",
+          "Grilled Vegetable"
+        ]
+      },
+      "Salads": {
+        "Items": [
+          "Romaine with Greek Pico",
+          "Romaine with Kale Tabouleh",
+          "Romaine with Israeli Couscous",
+          "Mediterranean Lentil Pasta with grilled vegetables and chimichurri sauce"
+        ]
+      },
+      "Sauces and Spreads": {
+        "Items": [
+          "Whipped Feta",
+          "Hummus",
+          "Jalapeno Hummus",
+          "Diavolo",
+          "Tzatziki",
+          "Walnut Romesco",
+          "Zesty Ranch",
+          "Lemon Vinaigrette"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "4 p.m. to 8 p.m."
+      },
+      {
+        "day": "Friday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Bread & Beyond Deli",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1211546,
+      "lng": -97.0712636
+    },
+    "status": "open",
+    "crowdLevel": 0,
+    "officialMenu": [
+      "Sandwiches",
+      "Gourmet",
+      "Sandwich your way",
+      "Salad your way",
+      "Drinks"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Bread &amp; Beyond Deli offers gourmet sandwiches and salads.",
+    "url": "/locations/bread-beyond-deli.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552753",
+    "detailedMenu": {
+      "Sandwich Your Way": {
+        "Items": [
+          "Breads ciabatta, white hoagie, wheat hoagie, 9-grain, basil focaccia, gluten-free bread",
+          "Wraps spinach, wheat",
+          "Meats ham, turkey, roast beef, grilled chicken, chicken salad, tuna salad",
+          "Vegetarian egg salad, hummus",
+          "Cheese American, cheddar, Swiss, provolone, pepper jack, mozzarella",
+          "Assorted Toppings",
+          "Dressings mayo, mustard, pesto, ranch, honey mustard, BBQ sauce, chipotle mayo, raspberry vinaigrette,\n                           dijon mustard, balsamic vinegar and olive oil"
+        ]
+      },
+      "Salad Your Way": {
+        "Choose Your Base": [
+          "Spinach",
+          "Spring Mix",
+          "Shredded Cabbage",
+          "Vegetable Quinoa Blend"
+        ]
+      },
+      "Drinks": {
+        "Items": [
+          "Fountain Drink",
+          "Bottled Water"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "11 a.m. to 3 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Caribou Coffee",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1217246,
+      "lng": -97.069926
+    },
+    "status": "open",
+    "crowdLevel": 41,
+    "officialMenu": [
+      "Coffee",
+      "Signature",
+      "Classics",
+      "Fruit &amp; yogurt smoothies",
+      "Caribou coolers",
+      "Coffeeless coolers",
+      "Tea",
+      "Oatmeal",
+      "Snack &amp; bakery items"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Caribou Coffee is a coffee shop with a commitment to\n                        sustainability.",
+    "url": "/locations/caribou-coffee.html",
+    "hasGrubhub": true,
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552748",
+    "detailedMenu": {
+      "Coffee": {
+        "Items": [
+          "Daily Coffee",
+          "Cold Press",
+          "Crafted Press hot, iced or blended"
+        ]
+      },
+      "Signature": {
+        "Items": [
+          "Turtle Mocha",
+          "Campfire Mocha",
+          "Vanilla White Mocha",
+          "Mint Condition Mocha",
+          "Caramel High Rise"
+        ]
+      },
+      "Classics": {
+        "Items": [
+          "Mocha",
+          "Latte",
+          "Northern Lite Latte",
+          "Macchiato",
+          "Cappuccino",
+          "Hot Chocolate"
+        ]
+      },
+      "Fruit &amp; Yogurt Smoothies": {
+        "Items": [
+          "Strawberry Banana"
+        ]
+      },
+      "Caribou Coolers": {
+        "Items": [
+          "Real Caramel",
+          "Real Vanilla",
+          "Real Chocolate"
+        ]
+      },
+      "Coffeeless Coolers": {
+        "Items": [
+          "Frozen Hot Chocolate",
+          "Cookies & Cream"
+        ]
+      },
+      "Tea": {
+        "Items": [
+          "Chai Tea Latte hot or iced",
+          "Green Tea Lemonade still or sparkling",
+          "Peach Black still or sparkling",
+          "Hot Tea",
+          "Iced Tea mango black, tropical green, classic black"
+        ]
+      },
+      "Oatmeal": {
+        "Items": [
+          "Six-Grain Blend"
+        ]
+      },
+      "Snack &amp; Bakery Items": {
+        "Items": [
+          "Muffins",
+          "Scones",
+          "Bagels"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Thursday",
+        "hours": "7:30 a.m. to 6 p.m."
+      },
+      {
+        "day": "Friday",
+        "hours": "7:30 a.m. to 3 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Chick-fil-A",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1217245,
+      "lng": -97.0742166
+    },
+    "status": "open",
+    "crowdLevel": 66,
+    "officialMenu": [
+      "Sandwiches",
+      "Chicken",
+      "Chicken Nuggets",
+      "Waffle Fries",
+      "Fries",
+      "Entrées",
+      "Sides",
+      "Beverages",
+      "Sauces"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Chick-fil-A offers chicken sandwiches, chicken nuggets\n                        and waffle fries.",
+    "url": "/locations/chick-fil-a.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552754",
+    "detailedMenu": {
+      "Entrées": {
+        "Items": [
+          "Chicken Nuggets 8- or 12-count",
+          "Grilled Chicken Nuggets 8- or 12- count",
+          "Chicken Sandwich with pickles",
+          "Grilled Chicken Sandwich"
+        ]
+      },
+      "Sides": {
+        "Items": [
+          "Waffle Fries",
+          "Fruit Cup",
+          "Brownie",
+          "Salad"
+        ]
+      },
+      "Beverages": {
+        "Items": [
+          "Lemonade",
+          "Diet Lemonade",
+          "Sweet and Unsweet Tea",
+          "Fountain Drinks"
+        ]
+      },
+      "Sauces": {
+        "Items": [
+          "Chick-fil-a Sauce",
+          "Polynesian",
+          "Honey Mustard",
+          "Barbeque",
+          "Ranch"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "10:30 a.m. to 8 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Mambo Italiano",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1212789,
+      "lng": -97.0713056
+    },
+    "status": "open",
+    "crowdLevel": 10,
+    "officialMenu": [
+      "Pizza",
+      "Pasta",
+      "Calzones",
+      "Side"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Mambo Italiano offers pizza, calzones and pasta.",
+    "url": "/locations/mambo-italiano.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552757",
+    "detailedMenu": {
+      "Pizza": {
+        "Items": [
+          "Cheese",
+          "Pepperoni",
+          "Veggie",
+          "Canadian Bacon or Sausage",
+          "Meat Lovers",
+          "Chicken and Spinach on wheat crust"
+        ]
+      },
+      "Pasta": {
+        "Items": [
+          "Chicken Alfredo",
+          "Meatball Marinara"
+        ]
+      },
+      "Side": {
+        "Items": [
+          "Broccoli",
+          "Breadsticks"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "10:30 a.m. to 2 p.m."
+      },
+      {
+        "day": "Monday - Thursday",
+        "hours": "5 p.m. to 8 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Passport",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1208852,
+      "lng": -97.0687809
+    },
+    "status": "open",
+    "crowdLevel": 99,
+    "officialMenu": [
+      "Various options"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Passport features weekly rotating world menus.&nbsp;",
+    "url": "/locations/passport.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552758",
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "11  a.m. to 2 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Plaza Corner Cafe",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1212789,
+      "lng": -97.0713056
+    },
+    "status": "open",
+    "crowdLevel": 72,
+    "officialMenu": [
+      "&nbsp;",
+      "Grill",
+      "Soup",
+      "Tomato Soup",
+      "Gourmet",
+      "Grilled Cheese",
+      "Sandwiches",
+      "Sides",
+      "Combos"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Plaza Corner Cafe offers a variety of grilled cheese\n                        sandwiches, mac-n-cheese, and a rotating soup menu.",
+    "url": "/locations/plaza-corner-cafe.html",
+    "cuisine": [
+      "&nbsp;"
+    ],
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552752",
+    "detailedMenu": {
+      "Sandwiches": {
+        "Items": [
+          "Classic Grilled Cheese - bread toasted in butter with melted american cheese",
+          "Smokehouse Melt - tender smoked chopped brisket and pickles between melted cheddar and american cheese",
+          "Roasted Veggie Melt - roasted squash, zucchini, onions and peppers between provolone cheese and walnut\n                           romesco",
+          "Bacon Tomato Melt  slices tomators and bacon melted between slices of American cheese",
+          "Hamburger black angus 5 oz burger or cheeseburger with choice of cheddar, american or swiss\n                           served with lettuce, tomato, onion and pickle on fresh bun"
+        ]
+      },
+      "Soup": {
+        "Items": [
+          "Tomato Basil",
+          "Chili"
+        ]
+      },
+      "Sides": {
+        "Chili Cheese Tots": [
+          "House Salad - Spring mix with grape tomatoes, sliced cucumber, shredded carrot, and shredded cheddar\n                           cheese"
+        ]
+      },
+      "Combos": {
+        "Items": [
+          "Classic Grilled Cheese Combo -  classic grilled cheese and tomato soup",
+          "Grilled Cheese and Salad Combo - classic grilled cheese and house salad",
+          "Soup and Salad Combo - soup and house salad"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "11 a.m. to 3 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Red Earth Kitchen",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1211183,
+      "lng": -97.0686576
+    },
+    "status": "open",
+    "crowdLevel": 56,
+    "officialMenu": [
+      "Breakfast",
+      "Lunch",
+      "Homestyle",
+      "Local Ingredients",
+      "Lunch - week 1",
+      "Lunch - week 2",
+      "Lunch - week 3"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Red Earth Kitchen offers homestyle breakfast and lunch\n                        made from local ingredients.",
+    "url": "/locations/red-earth-kitchen.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552761",
+    "detailedMenu": {
+      "Breakfast": {
+        "Breakfast Value Meal": [
+          "Pancakes (V) available Monday, Wednesday, Friday",
+          "French Toast (V) available Tuesday, Thursday",
+          "Biscuit (V)"
+        ],
+        "Pork or Chicken Sausage": [
+          "Daily Potatoes (V)"
+        ]
+      },
+      "Lunch - Week 1": {
+        "Chicken Fried Steak": [
+          "Chicken Fried Cauliflower (V)",
+          "Mashed Potatoes",
+          "Green bean Almandine",
+          "Whole Wheat Roll"
+        ]
+      },
+      "Lunch - Week 2": {
+        "BBQ Chicken Drumsticks": [
+          "Broccoli Rice Casserole (V)",
+          "Baked Beans",
+          "Corn on the Cob"
+        ]
+      },
+      "Lunch - Week 3": {
+        "Items": [
+          "Beef Pot Roast",
+          "Roasted Baby Carrots",
+          "Roasted Red Potatoes",
+          "Quinoa Stuffed Pepper w/ Red Pepper Couli (V)"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "7:30 a.m. to 11 a.m.\n                                 \n                                 11:15 a.m. to 2 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Shake Smart",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1211183,
+      "lng": -97.0686576
+    },
+    "status": "open",
+    "crowdLevel": 3,
+    "officialMenu": [
+      "Sandwiches",
+      "Coffee",
+      "Meal Replacement Shakes",
+      "Cold-Brew Coffee",
+      "Classic shakes",
+      "Specialty shakes",
+      "Greens &amp; veggies",
+      "Exotic shakes",
+      "Make it your way",
+      "Shake your smoothie",
+      "Scooped bowls",
+      "Blended bowls",
+      "Cold-brew coffee",
+      "All-natural sandwiches"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Shake Smart offers meal replacement shakes, sandwiches,\n                        cold-brew coffee and more.",
+    "url": "/locations/shake-smart.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552779",
+    "detailedMenu": {
+      "Classic Shakes": {
+        "Items": [
+          "Chocolate Frosty Wendy has nothing on us",
+          "Vanilla Thrilla the bean that gets you lean!",
+          "Cookies N' Cream need we say more?"
+        ]
+      },
+      "Specialty Shakes": {
+        "Items": [
+          "Banana Split strawberry, banana, chocolate protein",
+          "Strawberry Fields strawberry, vanilla protein",
+          "P-B2 banana, chocolate protein, peanut butter",
+          "Grammy's Goods cookies n' cream protein, peanut butter"
+        ]
+      },
+      "Greens &amp; Veggies": {
+        "Items": [
+          "Green Tea Matcha green tea matcha, vanilla protein",
+          "Greens to Go spinach, banana, pineapple, oj, protein",
+          "Carrot Cake cinnamon, banana, carrot juice, vanilla protein",
+          "Organic Supershake organic superfood, banana, vanilla protein, peanut butter"
+        ]
+      },
+      "Exotic Shakes": {
+        "Items": [
+          "A Perfect 10 blueberry, banana, vanilla protein, peanut butter",
+          "Acai Energy acai, banana, vanilla protein, peanut butter",
+          "Chocolate Covered Strawberry strawberry, acai, chocolate protein",
+          "Breakfast to Go strawberry, pineapple, acai, oj, vanilla protein",
+          "Mea Aloha pineapple, banana, acai, apple juice, protein",
+          "Fruitopia strawberry, banana, acai, apple juice, protein",
+          "Pink Cadillac pitaya, pineapple, oj, vanilla protein"
+        ]
+      },
+      "Make It Your Way": {
+        "Items": [
+          "Make it a Bowl with granola and banana slices on top",
+          "Almond Milk or Soy Milk instead of low/nonfat milk",
+          "Almond Butter for any peanut butter shake",
+          "Organic Plant Protein in place of whey protein",
+          "Soy Protein in place of whey protein"
+        ]
+      },
+      "Shake Your Smoothie": {
+        "Items": [
+          "Choose a Liquid: apple juice or orange juice",
+          "Choose Two Fruits: strawberry, banana, blueberry, pineapple, acai, pitaya",
+          "Balanced with Protein"
+        ]
+      },
+      "Scooped Bowls": {
+        "Items": [
+          "Rawcai scoops of organic acai and strawberry topped with granola, banana slices, chia and\n                           coconut flakes",
+          "Raw-PB scoops of organic acai topped with granola, banana slices, dark chocolate and peanut\n                           butter",
+          "The Buzz Bowl scoops of organic acai, pitaya and pineapple topped with granola, coconut flakes\n                           and bee pollen"
+        ]
+      },
+      "Blended Bowls": {
+        "Items": [
+          "Organic Acai Bowls organic acai, strawberry, apple juice and protein topped with granola, coconut flakes\n                           and banana slices",
+          "PB&A organic acai, strawberry, peanut butter, almond milk and protein topped with granola,\n                           dark chocolate and banana slices",
+          "Dragon Bowl pitaya, pineapple, oj and vanilla protein topped with granola, chia and coconut flakes"
+        ]
+      },
+      "Cold-Brew Coffee": {
+        "Items": [
+          "Shake Your Coffee vanilla or chocolate protein, extras available",
+          "Cold Brew black or with choice of milk"
+        ]
+      },
+      "All-Natural Sandwiches": {
+        "Items": [
+          "Peanut Butter on whole-wheat thin bread with bananas",
+          "Almond Butter on whole-wheat thin bread with bananas"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "9 a.m. to 6 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Union Chophouse Taqueria",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.121037,
+      "lng": -97.0693125
+    },
+    "status": "open",
+    "crowdLevel": 45,
+    "officialMenu": [
+      "Queso",
+      "Guacamole",
+      "Nachos",
+      "Chips and Salsa",
+      "Bowl-ritos",
+      "Quesadillas",
+      "Smothered burritos",
+      "Chips",
+      "Extras"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Union Chophouse Taqueria offers bowl-ritos, nachos,\n                        chips and salsa, queso and guacamole.",
+    "url": "/locations/union-chophouse.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552786",
+    "detailedMenu": {
+      "Bowl-Ritos": {
+        "Items": [
+          "Beef",
+          "Chicken",
+          "Vegetable"
+        ]
+      },
+      "Nachos": {
+        "Items": [
+          "Beef",
+          "Chicken",
+          "Vegetable"
+        ]
+      },
+      "Quesadillas": {
+        "Items": [
+          "Beef",
+          "Chicken",
+          "Vegetable"
+        ]
+      },
+      "Smothered Burritos": {
+        "Items": [
+          "Beef",
+          "Chicken",
+          "Grilled Vegetable"
+        ]
+      },
+      "Chips": {
+        "Items": [
+          "Chips and Salsa",
+          "Chips and Queso",
+          "Chips and Guacamole"
+        ]
+      },
+      "Extras": {
+        "Items": [
+          "Side of Salsa",
+          "Side of Queso",
+          "Side of Guacamole"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "11 a.m. to 7 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Union Express",
+    "building": "Student Union",
+    "coordinates": {
+      "lat": 36.1212321,
+      "lng": -97.0689217
+    },
+    "status": "open",
+    "crowdLevel": 42,
+    "officialMenu": [
+      "Grab-and-Go",
+      "Snacks",
+      "Beverages",
+      "Hot breakfast sandwiches",
+      "Hot breakfast burritos",
+      "From the bakery"
+    ],
+    "liveMenu": [],
+    "description": "Located in the Student Union, Union Express is a convenience store offering grab-and-go\n                        items, quick snacks and beverages.",
+    "url": "/locations/union-express.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552774",
+    "detailedMenu": {
+      "Hot Breakfast Sandwiches": {
+        "Items": [
+          "Bacon, Egg and Cheese",
+          "Sausage, Egg and Cheese",
+          "Egg and Cheese"
+        ]
+      },
+      "Hot Breakfast Burritos": {
+        "Items": [
+          "Bacon, Egg and Cheese",
+          "Sausage, Egg and Cheese",
+          "Egg and Cheese"
+        ]
+      },
+      "From the Bakery": {
+        "Items": [
+          "Old School Bagel",
+          "Muffin",
+          "Donut",
+          "Long John",
+          "Scone",
+          "Jumbo Cookie"
+        ]
+      },
+      "Beverages": {
+        "Items": [
+          "Fountain Drinks",
+          "Cappuccino",
+          "Coffee",
+          "Hot Tea"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "7:30 a.m. to 9 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  },
+  {
+    "name": "Larry & Kay's Dairy Bar",
+    "building": "Other Campus Dining",
+    "coordinates": {
+      "lat": 36.1285,
+      "lng": -97.0673
+    },
+    "status": "open",
+    "crowdLevel": 34,
+    "officialMenu": [
+      "Sandwiches",
+      "Coffee",
+      "Starbucks Coffee",
+      "Gourmet",
+      "Frozen Custard",
+      "Breakfast sandwiches",
+      "Frozen custard",
+      "Coffee &amp; espresso drinks",
+      "Hot &amp; iced teas",
+      "Specialty drinks",
+      "Grab &amp; go"
+    ],
+    "liveMenu": [],
+    "description": "Located in Agricultural Hall, Larry &amp; Kay's Dairy Bar offers frozen custard, gourmet\n                        sandwiches, and Starbucks coffee.",
+    "url": "/locations/dairy-bar.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552800",
+    "detailedMenu": {
+      "Breakfast Sandwiches": {
+        "Items": [
+          "Egg and Cheese egg and cheese on ciabatta",
+          "Sausage, Egg and Cheese sausage patty, egg and cheese on ciabatta",
+          "Monterey Egg White egg whites, bacon and monterey jack on ciabatta"
+        ]
+      },
+      "Sandwiches": {
+        "The Classic": [
+          "Chicken Pesto sliced chicken smothered in persto sauce and mozzarella on toasted sourdough",
+          "Smokey Brisket sliced brisket sandwiched between cheddar and rovolne cheese with bbq sauce and chipotle\n                           mayo on fresh sourdough"
+        ]
+      },
+      "Frozen Custard": {
+        "Items": [
+          "Classic Vanilla",
+          "Topping chocolate syrup, strawberry syrup, caramel syrup, oreo crumbles, rainbow sprinkles,\n                           butterfinger pieces, M&M"
+        ]
+      },
+      "Coffee &amp; Espresso Drinks": {
+        "Items": [
+          "Fresh Brewed Coffee",
+          "Cafe Americano",
+          "Cafe Latte",
+          "Caramel Macchiato",
+          "Cafe Mocha",
+          "White Chocolate Mocha",
+          "Cappuccino",
+          "Cold Brew"
+        ]
+      },
+      "Hot &amp; Iced Teas": {
+        "Items": [
+          "Chai Tea Latte",
+          "Teavana iced tea or iced tea lemonade",
+          "Hot Tea"
+        ]
+      },
+      "Specialty Drinks": {
+        "Items": [
+          "Frappuccinos vanilla bean, caramel, white chocolate mocha",
+          "Refreshers strawberry acai, mango dragonfruit",
+          "Hot Chocolate traditional, white chocolate"
+        ]
+      },
+      "Grab &amp; Go": {
+        "Items": [
+          "Sandwiches and Salads availability varies",
+          "Bagel",
+          "Donut",
+          "Scone",
+          "Jumbo Cookie",
+          "Jumbo Muffin"
+        ]
+      }
+    }
+  },
+  {
+    "name": "Café Libro",
+    "building": "Other Campus Dining",
+    "coordinates": {
+      "lat": 36.1227094,
+      "lng": -97.0699997
+    },
+    "status": "open",
+    "crowdLevel": 56,
+    "officialMenu": [
+      "Pizza",
+      "Sandwiches",
+      "Coffee",
+      "Pasta",
+      "Grab-and-Go",
+      "Coffee &amp; tea",
+      "Beverages",
+      "Baked goods",
+      "Breakfast sandwiches",
+      "Hot sandwiches",
+      "Pizza and pasta"
+    ],
+    "liveMenu": [],
+    "description": "Located in Edmon Low Library, Café Libro offers Starbucks coffee, grab-and-go items,\n                        hot sandwiches, individual pizzas and pasta bakes.",
+    "url": "/locations/cafe-libro.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552745",
+    "detailedMenu": {
+      "Coffee &amp; Tea": {
+        "Items": [
+          "Freshly Brewed Coffee",
+          "Caffè Americano",
+          "Caffè Latte",
+          "Caramel Macchiato",
+          "Caffè Mocha",
+          "White Chocolate Mocha",
+          "Chai Tea Latte",
+          "Teavana Iced Tea black, green or passion",
+          "Teavana Iced Tea Lemonade black, green or passion",
+          "Hot Tea"
+        ]
+      },
+      "Beverages": {
+        "Items": [
+          "Frappuccino vanilla bean, caramel or white chocolate mocha",
+          "Refreshers strawberry acai, mango dragonfruit or very berry hibiscus",
+          "Hot Chocolate"
+        ]
+      },
+      "Baked Goods": {
+        "Items": [
+          "Old School Bagel",
+          "Donut",
+          "Apple Fritter",
+          "Long John",
+          "Scone",
+          "Muffin",
+          "Jumbo Cookie"
+        ]
+      },
+      "Breakfast Sandwiches": {
+        "Items": [
+          "Monterey Egg White egg whites, bacon and Monterey Jack cheese on ciabatta",
+          "Egg and Cheese egg and cheese on ciabatta",
+          "Sausage, Egg and Cheese sausage patty, egg and cheese on ciabatta"
+        ]
+      },
+      "Hot Sandwiches": {
+        "Items": [
+          "Tomato Mozzarella tomato, mozzarella and pesto on ciabatta",
+          "Chicken Isabella grilled chicken, fresh basil, red onion, tomato, mozzarella and chipotle mayo on ciabatta",
+          "Smokey Brisket sliced brisket, cheddar, provolone, BBQ sauce and chipotle mayo on ciabatta",
+          "Chicken Cordon Bleu sliced ham, chicken breast, swiss cheese and chipotle mayo on ciabatta"
+        ]
+      },
+      "Pizza and Pasta": {
+        "Items": [
+          "Individual Pizzas cheese or pepperoni",
+          "Individual Pasta Bakes chicken alfredo or thre-cheese marinara"
+        ]
+      }
+    }
+  },
+  {
+    "name": "Barkin' Brews",
+    "building": "Other Campus Dining",
+    "coordinates": {
+      "lat": 36.1285,
+      "lng": -97.0673
+    },
+    "status": "open",
+    "crowdLevel": 26,
+    "officialMenu": [
+      "Coffee",
+      "Breakfast",
+      "Lunch",
+      "Grab-and-Go",
+      "Breakfast sandwiches",
+      "Coffee &amp; espresso drinks",
+      "Hot &amp; iced teas",
+      "Specialty drinks",
+      "Grab &amp; go"
+    ],
+    "liveMenu": [],
+    "description": "Located in McElroy VetMed Building, Barkin' Brews offers Starbucks coffee items and\n                        grab-and-go items and beverages perfect for breakfast or lunch.",
+    "url": "/locations/barkin-brews.html",
+    "mapLink": "https://map.okstate.edu/?id=1842#!m/552800",
+    "detailedMenu": {
+      "Breakfast Sandwiches": {
+        "Items": [
+          "Egg and Cheese egg and cheese on ciabatta",
+          "Sausage, Egg and Cheese sausage patty, egg and cheese on ciabatta"
+        ]
+      },
+      "Coffee &amp; Espresso Drinks": {
+        "Items": [
+          "Fresh Brewed Coffee",
+          "Cafe Americano",
+          "Cafe Latte",
+          "Caramel Macchiato",
+          "Cafe Mocha",
+          "White Chocolate Mocha",
+          "Cappuccino",
+          "Cold Brew",
+          "Nitro Cold Brew"
+        ]
+      },
+      "Hot &amp; Iced Teas": {
+        "Items": [
+          "Chai Tea Latte",
+          "Teavana iced tea or iced tea lemonade",
+          "Hot Tea"
+        ]
+      },
+      "Specialty Drinks": {
+        "Items": [
+          "Frappuccinos vanilla bean, caramel, white chocolate mocha",
+          "Refreshers strawberry acai, mango dragonfruit",
+          "Hot Chocolate traditional, white chocolate"
+        ]
+      },
+      "Grab &amp; Go": {
+        "Items": [
+          "Sandwiches and Salads availability varies",
+          "Bagel",
+          "Donut",
+          "Scone",
+          "Jumbo Cookie",
+          "Jumbo Muffin"
+        ]
+      }
+    },
+    "hours": [
+      {
+        "day": "Monday - Friday",
+        "hours": "7:30 a.m. to 2 p.m."
+      },
+      {
+        "day": "Saturday - Sunday",
+        "hours": "Closed"
+      }
+    ]
+  }
+]

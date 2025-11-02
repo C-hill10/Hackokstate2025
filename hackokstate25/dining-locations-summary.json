@@ -1,0 +1,323 @@
+{
+  "totalLocations": 28,
+  "buildings": [
+    "Quicklinks",
+    "Adams Market",
+    "Bennett Hall",
+    "Central Market Place",
+    "North Dining",
+    "Student Union",
+    "Other Campus Dining"
+  ],
+  "scrapeDate": "2025-11-01T21:39:39.842Z",
+  "locations": [
+    {
+      "name": "Locations",
+      "building": "Quicklinks",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": false,
+      "hasDetailedMenu": false,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Express It!",
+      "building": "Adams Market",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": false,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Fast Break",
+      "building": "Bennett Hall",
+      "coordinates": {
+        "lat": 36.126,
+        "lng": -97.068
+      },
+      "hasHours": true,
+      "hasDetailedMenu": false,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Slam Dunk",
+      "building": "Bennett Hall",
+      "coordinates": {
+        "lat": 36.126,
+        "lng": -97.068
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "1890 Market",
+      "building": "Central Market Place",
+      "coordinates": {
+        "lat": 36.13,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": false,
+      "hasGrubhub": false
+    },
+    {
+      "name": "BYTE",
+      "building": "Central Market Place",
+      "coordinates": {
+        "lat": 36.13,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": false,
+      "hasGrubhub": true
+    },
+    {
+      "name": "Caribou Coffee",
+      "building": "Central Market Place",
+      "coordinates": {
+        "lat": 36.13,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "The 405 Deli",
+      "building": "Central Market Place",
+      "coordinates": {
+        "lat": 36.13,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "B & B, Co.",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "Carvery",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Dash",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "The Natural",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Noodle U",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Road Trip Pizza & Mac",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "Zest",
+      "building": "North Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Bread & Beyond Deli",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "Caribou Coffee",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": true
+    },
+    {
+      "name": "Chick-fil-A",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Mambo Italiano",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Passport",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": false,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Plaza Corner Cafe",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Red Earth Kitchen",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Shake Smart",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Union Chophouse Taqueria",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Union Express",
+      "building": "Student Union",
+      "coordinates": {
+        "lat": 36.125,
+        "lng": -97.065
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Larry & Kay's Dairy Bar",
+      "building": "Other Campus Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": false,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Café Libro",
+      "building": "Other Campus Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": false,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    },
+    {
+      "name": "Barkin' Brews",
+      "building": "Other Campus Dining",
+      "coordinates": {
+        "lat": 36.1285,
+        "lng": -97.0673
+      },
+      "hasHours": true,
+      "hasDetailedMenu": true,
+      "hasGrubhub": false
+    }
+  ]
+}

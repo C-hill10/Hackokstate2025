@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSU Dining Coordinates Helper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1 { color: #333; }
+        h2 { color: #666; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .location-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-left: 3px solid #2196F3;
+        }
+        input {
+            padding: 5px;
+            margin: 0 10px;
+            width: 120px;
+        }
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover { background: #1976d2; }
+        #output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .map-link {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        .map-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ OSU Dining Coordinates Helper</h1>
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ol>
+                <li>For each location, click the "Get from Google Maps" link</li>
+                <li>Or manually enter coordinates if you know them</li>
+                <li>Coordinates will be collected below</li>
+                <li>Click "Generate Code" to get JavaScript code to paste into <code>accurateOSUCoordinates.js</code></li>
+            </ol>
+        </div>
+
+        <h2>Location Coordinates</h2>
+        <div id="locations"></div>
+        
+        <button onclick="generateCode()">Generate Code</button>
+        <button onclick="clearAll()">Clear All</button>
+        
+        <h2>Output Code</h2>
+        <div id="output">Click "Generate Code" to see the output...</div>
+    </div>
+
+    <script>
+        // List of all dining locations
+        const locations = [
+            { name: "Express It!", building: "Adams Market", mapId: "552768" },
+            { name: "Fast Break", building: "Bennett Hall", mapId: "552770" },
+            { name: "Slam Dunk", building: "Bennett Hall", mapId: "552750" },
+            { name: "1890 Market", building: "Central Market Place", mapId: "552772" },
+            { name: "BYTE", building: "Central Market Place", mapId: "552753" },
+            { name: "Caribou Coffee (CMP)", building: "Central Market Place", mapId: "552748" },
+            { name: "The 405 Deli", building: "Central Market Place", mapId: "552765" },
+            { name: "B & B, Co.", building: "North Dining", mapId: "552740" },
+            { name: "Carvery", building: "North Dining", mapId: "552780" },
+            { name: "Dash", building: "North Dining", mapId: "552776" },
+            { name: "The Natural", building: "North Dining", mapId: "552739" },
+            { name: "Noodle U", building: "North Dining", mapId: "552782" },
+            { name: "Road Trip Pizza & Mac", building: "North Dining", mapId: "552762" },
+            { name: "Zest", building: "North Dining", mapId: "552766" },
+            { name: "Bread & Beyond Deli", building: "Student Union", mapId: "552753" },
+            { name: "Caribou Coffee (SU)", building: "Student Union", mapId: "552748" },
+            { name: "Chick-fil-A", building: "Student Union", mapId: "552754" },
+            { name: "Mambo Italiano", building: "Student Union", mapId: "552757" },
+            { name: "Passport", building: "Student Union", mapId: "552758" },
+            { name: "Plaza Corner Cafe", building: "Student Union", mapId: "552752" },
+            { name: "Red Earth Kitchen", building: "Student Union", mapId: "552761" },
+            { name: "Shake Smart", building: "Student Union", mapId: "552779" },
+            { name: "Union Chophouse Taqueria", building: "Student Union", mapId: "552786" },
+            { name: "Union Express", building: "Student Union", mapId: "552774" },
+            { name: "Larry & Kay's Dairy Bar", building: "Agricultural Hall", mapId: "552800" },
+            { name: "Café Libro", building: "Edmon Low Library", mapId: "552745" },
+            { name: "Barkin' Brews", building: "McElroy VetMed Building", mapId: "552800" },
+        ];
+
+        const coords = {};
+
+        function renderLocations() {
+            const container = document.getElementById('locations');
+            container.innerHTML = locations.map(loc => {
+                const mapLink = `https://map.okstate.edu/?id=1842#!m/${loc.mapId}`;
+                const googleLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${loc.building} Oklahoma State University Stillwater OK`)}`;
+                
+                return `
+                    <div class="location-item">
+                        <strong>${loc.name}</strong> (${loc.building})<br>
+                        <a href="${mapLink}" target="_blank" class="map-link">View on OSU Map</a> | 
+                        <a href="${googleLink}" target="_blank" class="map-link">Get from Google Maps</a><br>
+                        Lat: <input type="number" step="0.000001" id="lat-${loc.name}" placeholder="36.XXXX" 
+                            value="${coords[loc.name]?.lat || ''}">
+                        Lng: <input type="number" step="0.000001" id="lng-${loc.name}" placeholder="-97.XXXX"
+                            value="${coords[loc.name]?.lng || ''}">
+                        <button onclick="updateCoord('${loc.name}')">Update</button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateCoord(name) {
+            const lat = parseFloat(document.getElementById(`lat-${name}`).value);
+            const lng = parseFloat(document.getElementById(`lng-${name}`).value);
+            if (!isNaN(lat) && !isNaN(lng)) {
+                coords[name] = { lat, lng };
+                alert(`Updated ${name}`);
+            }
+        }
+
+        function generateCode() {
+            let output = "const LOCATION_COORDINATES = {\n";
+            
+            locations.forEach(loc => {
+                if (coords[loc.name]) {
+                    output += `    '${loc.name}': { lat: ${coords[loc.name].lat}, lng: ${coords[loc.name].lng} },\n`;
+                }
+            });
+            
+            output += "};\n\n";
+            output += "const BUILDING_COORDINATES = {\n";
+            
+            // Group by building
+            const buildings = {};
+            locations.forEach(loc => {
+                if (coords[loc.name]) {
+                    if (!buildings[loc.building]) {
+                        buildings[loc.building] = [];
+                    }
+                    buildings[loc.building].push(coords[loc.name]);
+                }
+            });
+            
+            Object.keys(buildings).forEach(building => {
+                const coordsList = buildings[building];
+                const avgLat = coordsList.reduce((sum, c) => sum + c.lat, 0) / coordsList.length;
+                const avgLng = coordsList.reduce((sum, c) => sum + c.lng, 0) / coordsList.length;
+                output += `    '${building}': { lat: ${avgLat.toFixed(6)}, lng: ${avgLng.toFixed(6)} },\n`;
+            });
+            
+            output += "};\n";
+            
+            document.getElementById('output').textContent = output;
+        }
+
+        function clearAll() {
+            coords = {};
+            renderLocations();
+            document.getElementById('output').textContent = "Click 'Generate Code' to see the output...";
+        }
+
+        renderLocations();
+    </script>
+</body>
+</html>
+
